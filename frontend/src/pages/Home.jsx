@@ -1,17 +1,14 @@
 import React from "react";
+import ContactSection from "../components/Home/ContactSection.jsx";
+import BlogSection from "../components/Home/BlogSection.jsx";
 import SubscribeSection from "../components/Home/SubscribeSection.jsx";
-import Footer from "../components/Footer.jsx";
 
 const Home = () => {
   return (
-    <div className="bg-[#070B2D] text-white min-h-screen py-20">
-
+    <div className="bg-[#070B2D] min-h-screen text-white">
+      <ContactSection />
+      <BlogSection />
       <SubscribeSection />
-
-      <div className="mt-20">
-        <Footer />
-      </div>
-
     </div>
   );
 };
