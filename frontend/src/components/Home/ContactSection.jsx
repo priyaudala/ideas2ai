@@ -5,21 +5,18 @@ export default function ContactSection() {
   return (
     <section className="bg-gradient-to-r from-[#12002f] via-[#16003a] to-[#020a3a] py-28">
       <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-20 px-6 items-center">
-
         {/* LEFT FORM */}
         <div className="bg-[#f4f4f4] rounded-[28px] p-12">
-
           <h3 className="text-[34px] font-semibold text-[#0f172a] mb-4">
             Get in touch
           </h3>
 
           <p className="text-gray-500 mb-10 leading-relaxed">
-            Just fill out the form and our global experts will be in touch
-            right away with package and price solution to help you!
+            Just fill out the form and our global experts will be in touch right
+            away with package and price solution to help you!
           </p>
 
           <form className="space-y-6">
-
             {/* ROW 1 */}
             <div className="grid grid-cols-2 gap-6">
               <input
@@ -69,13 +66,11 @@ export default function ContactSection() {
               Send Message
               <ArrowRight size={18} />
             </button>
-
           </form>
         </div>
 
         {/* RIGHT CONTENT */}
         <div className="text-white">
-
           <p className="text-red-400 font-semibold text-sm tracking-wide mb-4">
             ● WE'RE HERE TO ANSWER ALL YOUR QUESTIONS
           </p>
@@ -94,7 +89,6 @@ export default function ContactSection() {
 
           {/* BUTTONS */}
           <div className="flex gap-6 mb-14">
-
             <button className="flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-4 rounded-full font-semibold">
               Get In Touch
               <ArrowRight size={18} />
@@ -104,13 +98,11 @@ export default function ContactSection() {
               Learn More
               <ArrowRight size={18} />
             </button>
-
           </div>
 
           {/* CONTACT INFO */}
 
           <div className="border-t border-white/20 pt-8 flex items-center gap-5">
-
             <div className="bg-white/10 p-4 rounded-xl">
               <Phone size={20} />
             </div>
@@ -119,11 +111,9 @@ export default function ContactSection() {
               <p className="text-gray-300">Feel Free to get in Touch</p>
               <p className="text-[24px] font-semibold">+990 123 456 789</p>
             </div>
-
           </div>
 
           <div className="border-t border-white/20 pt-8 mt-8 flex items-center gap-5">
-
             <div className="bg-white/10 p-4 rounded-xl">
               <Mail size={20} />
             </div>
@@ -132,11 +122,9 @@ export default function ContactSection() {
               <p className="text-gray-300">How can we Help you</p>
               <p className="text-[24px] font-semibold">info@example.com</p>
             </div>
-
           </div>
-
+          <div className="border-t border-white/20 pt-8 mt-8 flex items-center gap-5"></div>
         </div>
-
       </div>
     </section>
   );
