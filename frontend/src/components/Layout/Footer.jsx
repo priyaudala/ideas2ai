@@ -11,7 +11,6 @@ import {
 import { motion } from "framer-motion";
 
 const Footer = () => {
-  // 🔥 animation variants
   const container = {
     hidden: {},
     show: {
@@ -31,37 +30,43 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#070B2D] px-6 pb-12">
+    <footer className="bg-[#070B2D] px-4 sm:px-6 pb-10 sm:pb-12">
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto bg-[#0A1445] rounded-[60px] px-16 py-20 text-white"
+        className="
+          max-w-7xl mx-auto 
+          bg-[#0A1445] 
+          rounded-[30px] sm:rounded-[40px] lg:rounded-[60px] 
+          px-6 sm:px-10 lg:px-16 
+          py-12 sm:py-16 lg:py-20 
+          text-white
+        "
       >
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-16">
-          
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-14 lg:gap-16">
+
           {/* Logo */}
-          <motion.div variants={item}>
-            <h1 className="text-4xl font-semibold mb-6 flex items-center gap-2">
+          <motion.div variants={item} className="text-center sm:text-left">
+            <h1 className="text-3xl sm:text-4xl font-semibold mb-4 sm:mb-6 flex justify-center sm:justify-start items-center gap-2">
               <span className="text-purple-500">ai</span>
               Orbia
             </h1>
 
-            <p className="text-gray-300 text-sm leading-relaxed mb-8">
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 sm:mb-8">
               Our operations are centered on data protection and security,
               guaranteeing adherence to international regulations such as GDPR
               and HIPAA.
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex justify-center sm:justify-start gap-3 sm:gap-4">
               {[FaFacebookF, FaTwitter, FaLinkedinIn, FaPinterestP].map(
                 (Icon, i) => (
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.2, y: -5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-purple-600 transition"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-purple-600 transition"
                   >
                     <Icon size={14} />
                   </motion.div>
@@ -71,10 +76,12 @@ const Footer = () => {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div variants={item}>
-            <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
+          <motion.div variants={item} className="text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">
+              Quick Links
+            </h3>
 
-            <ul className="space-y-3 text-gray-300">
+            <ul className="space-y-2 sm:space-y-3 text-gray-300">
               {[
                 "Home",
                 "About Us",
@@ -85,13 +92,11 @@ const Footer = () => {
               ].map((item, i) => (
                 <li
                   key={i}
-                  className="cursor-pointer relative group w-fit"
+                  className="cursor-pointer relative group w-fit mx-auto sm:mx-0"
                 >
                   <span className="group-hover:text-white transition">
                     {item}
                   </span>
-
-                  {/* underline animation */}
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
                 </li>
               ))}
@@ -99,10 +104,12 @@ const Footer = () => {
           </motion.div>
 
           {/* Services */}
-          <motion.div variants={item}>
-            <h3 className="text-xl font-semibold mb-6">Our Services</h3>
+          <motion.div variants={item} className="text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">
+              Our Services
+            </h3>
 
-            <ul className="space-y-3 text-gray-300">
+            <ul className="space-y-2 sm:space-y-3 text-gray-300">
               {[
                 "AI-Powered Solutions",
                 "Custom Technology",
@@ -113,12 +120,11 @@ const Footer = () => {
               ].map((item, i) => (
                 <li
                   key={i}
-                  className="cursor-pointer relative group w-fit"
+                  className="cursor-pointer relative group w-fit mx-auto sm:mx-0"
                 >
                   <span className="group-hover:text-white transition">
                     {item}
                   </span>
-
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
                 </li>
               ))}
@@ -126,10 +132,12 @@ const Footer = () => {
           </motion.div>
 
           {/* Contact */}
-          <motion.div variants={item}>
-            <h3 className="text-xl font-semibold mb-6">Recent Post</h3>
+          <motion.div variants={item} className="text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">
+              Contact Info
+            </h3>
 
-            <ul className="space-y-6 text-gray-300">
+            <ul className="space-y-4 sm:space-y-6 text-gray-300">
               {[
                 {
                   icon: FaMapMarkerAlt,
@@ -149,7 +157,7 @@ const Footer = () => {
                   <motion.li
                     key={i}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-4 cursor-pointer"
+                    className="flex items-center justify-center sm:justify-start gap-3 sm:gap-4"
                   >
                     <Icon className="text-purple-500" />
                     <span>{item.text}</span>
@@ -163,18 +171,24 @@ const Footer = () => {
         {/* Bottom */}
         <motion.div
           variants={item}
-          className="border-t border-gray-700 mt-16 pt-8 flex justify-between flex-wrap text-sm text-gray-400"
+          className="
+            border-t border-gray-700 
+            mt-10 sm:mt-14 lg:mt-16 
+            pt-6 sm:pt-8 
+            flex flex-col md:flex-row 
+            items-center justify-between 
+            gap-4 text-sm text-gray-400 text-center md:text-left
+          "
         >
           <p>
             © All Copyright 2025 by{" "}
             <span className="text-purple-500">Orbia</span>. All Rights Reserved.
           </p>
 
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-8">
             <span className="hover:text-white cursor-pointer">
               Terms & Conditions
             </span>
-
             <span className="hover:text-white cursor-pointer">
               Privacy Policy
             </span>

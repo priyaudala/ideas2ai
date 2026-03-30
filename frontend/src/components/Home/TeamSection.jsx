@@ -36,14 +36,14 @@ export default function TeamSection() {
   const selected = teamData[active];
 
   return (
-    <section className="bg-[#f6f7fb] py-24 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="bg-[#f6f7fb] py-16 sm:py-20 md:py-24 overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* HEADER */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-red-500 text-xs font-semibold text-center tracking-widest mb-3"
+          className="text-red-500 text-[10px] sm:text-xs font-semibold text-center tracking-widest mb-2 sm:mb-3"
         >
           ● AI EXPERT TEAM
         </motion.p>
@@ -51,22 +51,27 @@ export default function TeamSection() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-[40px] lg:text-[52px] font-semibold text-center text-[#0b1b3f] mb-20 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-[52px] 
+                     font-semibold text-center text-[#0b1b3f] 
+                     mb-10 sm:mb-14 md:mb-20 leading-tight"
         >
           Our Professionals AI Expert Team.
         </motion.h2>
 
-        <div className="grid lg:grid-cols-3 gap-12 items-center">
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 items-center">
 
-          {/* LEFT LIST */}
-          <div className="space-y-6">
+          {/* LEFT LIST (Scrollable on mobile) */}
+          <div className="flex lg:block gap-4 overflow-x-auto lg:overflow-visible pb-2">
             {teamData.map((item, index) => (
               <motion.div
                 key={index}
                 onClick={() => setActive(index)}
-                whileHover={{ scale: 1.05, x: 5 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className={`flex items-center gap-4 p-4 rounded-[16px] cursor-pointer transition-all duration-300
+                className={`min-w-[220px] lg:min-w-full 
+                            flex items-center gap-4 p-4 rounded-[16px] 
+                            cursor-pointer transition
                 ${
                   active === index
                     ? "bg-white border border-gray-200 shadow-sm"
@@ -76,14 +81,16 @@ export default function TeamSection() {
                 <motion.img
                   src={item.image}
                   alt={item.name}
-                  className="w-14 h-14 rounded-xl object-cover"
-                  whileHover={{ rotate: 3 }}
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover"
                 />
+
                 <div>
-                  <h4 className="font-semibold text-[#0b1b3f] text-[16px]">
+                  <h4 className="font-semibold text-[#0b1b3f] text-sm sm:text-base">
                     {item.name}
                   </h4>
-                  <p className="text-gray-500 text-sm">{item.role}</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">
+                    {item.role}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -100,43 +107,54 @@ export default function TeamSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.1 }}
                 transition={{ duration: 0.5 }}
-                className="rounded-[28px] w-full max-w-[360px] object-cover shadow-lg"
+                className="rounded-[20px] sm:rounded-[28px] 
+                           w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px] 
+                           object-cover shadow-lg"
               />
             </AnimatePresence>
 
             {/* EXPERIENCE + SOCIAL */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="absolute bottom-[-35px] left-[60%] -translate-x-1/2 flex items-center"
-            >
-              <div className="bg-[#081c3a] text-white px-8 py-4 rounded-l-[14px] flex items-center gap-3 shadow-lg">
-                <span className="text-[24px] font-bold">10+</span>
-                <span className="text-sm whitespace-nowrap">
-                  Professional Experience
+            <div className="absolute 
+                            bottom-[-20px] sm:bottom-[-30px] 
+                            left-1/2 -translate-x-1/2 
+                            flex flex-col sm:flex-row items-center">
+
+              {/* EXPERIENCE */}
+              <div className="bg-[#081c3a] text-white 
+                              px-4 sm:px-6 py-3 
+                              rounded-t-[12px] sm:rounded-l-[14px] sm:rounded-tr-none 
+                              flex items-center gap-2 sm:gap-3 shadow-lg">
+                <span className="text-lg sm:text-[22px] font-bold">10+</span>
+                <span className="text-xs sm:text-sm">
+                  Experience
                 </span>
               </div>
 
-              {/* SOCIAL ICONS */}
-              <div className="bg-white border border-gray-200 px-5 py-3 rounded-r-[40px] flex items-center gap-4 shadow-sm">
+              {/* SOCIAL */}
+              <div className="bg-white border border-gray-200 
+                              px-3 sm:px-5 py-2 sm:py-3 
+                              rounded-b-[20px] sm:rounded-r-[40px] sm:rounded-bl-none 
+                              flex items-center gap-3 sm:gap-4 shadow-sm">
+
                 {[Facebook, FaTwitter, Linkedin, FaPinterest, FaInstagram].map(
                   (Icon, i) => (
                     <motion.div
                       key={i}
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-9 h-9 flex items-center justify-center rounded-full border hover:bg-red-500 group cursor-pointer transition"
+                      whileHover={{ scale: 1.2 }}
+                      className="w-8 h-8 flex items-center justify-center 
+                                 rounded-full border hover:bg-red-500 
+                                 group cursor-pointer transition"
                     >
-                      <Icon className="text-[#0b1b3f] group-hover:text-white text-sm" />
+                      <Icon className="text-[#0b1b3f] group-hover:text-white text-xs" />
                     </motion.div>
                   )
                 )}
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* RIGHT CONTENT */}
-          <div>
+          <div className="text-center lg:text-left">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected.name}
@@ -145,51 +163,40 @@ export default function TeamSection() {
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-[30px] font-semibold text-[#0b1b3f] mb-1">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#0b1b3f] mb-1">
                   {selected.name}
                 </h3>
 
-                <p className="text-gray-500 mb-5">{selected.role}</p>
+                <p className="text-gray-500 mb-4 sm:mb-5 text-sm sm:text-base">
+                  {selected.role}
+                </p>
 
-                <p className="text-gray-500 mb-8 leading-relaxed text-[15px] max-w-[420px]">
-                  We value curiosity, collaboration and a can-do attitude. Oh,
-                  and coffee — lots of coffee. Come join a team that celebrates
-                  your unique skills and helps you grow.
+                <p className="text-gray-500 mb-6 sm:mb-8 leading-relaxed text-sm max-w-[420px] mx-auto lg:mx-0">
+                  We value curiosity, collaboration and a can-do attitude.
+                  Come join a team that celebrates your unique skills.
                 </p>
 
                 {/* SKILLS */}
-                <div className="mb-6">
-                  <div className="flex justify-between text-sm mb-2 text-[#0b1b3f]">
-                    <span>Artificial Intelligence</span>
-                    <span>{selected.ai}%</span>
-                  </div>
+                {[
+                  { label: "Artificial Intelligence", value: selected.ai },
+                  { label: "Robotics Management", value: selected.robotics },
+                ].map((skill, i) => (
+                  <div key={i} className="mb-5 sm:mb-6">
+                    <div className="flex justify-between text-xs sm:text-sm mb-2 text-[#0b1b3f]">
+                      <span>{skill.label}</span>
+                      <span>{skill.value}%</span>
+                    </div>
 
-                  <div className="w-full h-[4px] bg-gray-200 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${selected.ai}%` }}
-                      transition={{ duration: 1 }}
-                      className="h-full bg-red-500 rounded-full"
-                    />
+                    <div className="w-full h-[4px] bg-gray-200 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.value}%` }}
+                        transition={{ duration: 1 }}
+                        className="h-full bg-red-500 rounded-full"
+                      />
+                    </div>
                   </div>
-                </div>
-
-                <div className="mb-10">
-                  <div className="flex justify-between text-sm mb-2 text-[#0b1b3f]">
-                    <span>Robotics Management</span>
-                    <span>{selected.robotics}%</span>
-                  </div>
-
-                  <div className="w-full h-[4px] bg-gray-200 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${selected.robotics}%` }}
-                      transition={{ duration: 1 }}
-                      className="h-full bg-red-500 rounded-full"
-                    />
-                  </div>
-                </div>
-
+                ))}
               </motion.div>
             </AnimatePresence>
           </div>
