@@ -22,15 +22,11 @@ export default function TestimonialSection() {
   const [index, setIndex] = useState(0);
 
   const nextSlide = () => {
-    setIndex((prev) =>
-      prev >= testimonials.length - 1 ? 0 : prev + 1
-    );
+    setIndex((prev) => (prev >= testimonials.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
+    setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   useEffect(() => {
@@ -44,7 +40,6 @@ export default function TestimonialSection() {
   return (
     <section className="bg-[#f5f6fa] py-16 sm:py-20 lg:py-24 overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        
         {/* LEFT CONTENT */}
         <div className="order-2 lg:order-1">
           <p className="text-red-500 text-[11px] sm:text-xs font-semibold tracking-[0.25em] mb-3 sm:mb-4 text-center lg:text-left">
@@ -114,14 +109,14 @@ export default function TestimonialSection() {
             <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 mt-6">
               <button
                 onClick={prevSlide}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white shadow flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white shadow flex items-center justify-center text-gray-500 hover:bg-purple-600 hover:text-white transition-all duration-300"
               >
                 <ArrowLeft size={18} />
               </button>
 
               <button
                 onClick={nextSlide}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white shadow flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white shadow flex items-center justify-center text-gray-500 hover:bg-purple-600 hover:text-white transition-all duration-300"
               >
                 <ArrowRight size={18} />
               </button>
