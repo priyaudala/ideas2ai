@@ -38,12 +38,9 @@ const OurProjects = () => {
 
   return (
     <section className="w-full bg-[#f7f8fa]">
-
       {/* ================= PROJECT SECTION ================= */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-24">
-
         <div className="grid lg:grid-cols-[0.8fr_1.4fr] gap-8">
-
           {/* LEFT */}
           <div>
             <p className="text-red-500 font-semibold flex items-center gap-2">
@@ -54,7 +51,6 @@ const OurProjects = () => {
 
           {/* RIGHT */}
           <div>
-
             <h2 className="text-[#0b1b3f] text-3xl md:text-5xl font-bold leading-tight">
               Real-World Applications of AI Technology That Drive Impact
             </h2>
@@ -62,16 +58,11 @@ const OurProjects = () => {
             <div className="border-t border-gray-200 my-6"></div>
 
             <div className="space-y-6">
-
               {projects.map((p) => (
                 <div key={p.id} className="border-b border-gray-300 pb-6">
-
-                  <p className="text-red-500 font-medium mb-2">
-                    {p.name}
-                  </p>
+                  <p className="text-red-500 font-medium mb-2">{p.name}</p>
 
                   <div className="flex items-center justify-between gap-4">
-
                     <h3 className="text-[#0b1b3f] text-2xl md:text-3xl font-semibold">
                       {p.title}
                     </h3>
@@ -83,7 +74,6 @@ const OurProjects = () => {
                     >
                       <FiArrowRight />
                     </button>
-
                   </div>
 
                   <p className="text-gray-500 text-sm mt-2 max-w-md">
@@ -107,61 +97,66 @@ const OurProjects = () => {
                       View Details →
                     </button>
                   </div>
-
                 </div>
               ))}
-
             </div>
-
           </div>
         </div>
       </div>
 
       {/* ================= SCROLLING TEXT (FIXED PERFECT LOOP) ================= */}
       <div className="w-full overflow-hidden py-12">
-
         <div className="flex w-max animate-marquee items-center">
-
           {/* FIRST SET */}
-          <div className="flex items-center gap-24 pr-24">
-           <div className="text-6xl text-yellow-500 font-bold">⭐</div>
-            <div className="text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
+          <div className="flex items-center gap-12 sm:gap-16 pr-8 sm:pr-16">
+            <div className="text-5xl sm:text-6xl text-yellow-500 font-bold">
+              ⭐
+            </div>
+            <div className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
               Generate With Ease
             </div>
-              <div className="text-6xl text-yellow-500 font-bold">⭐</div>
-            <div className="text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
+            <div className="text-5xl sm:text-6xl text-yellow-500 font-bold">
+              ⭐
+            </div>
+            <div className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
               Content Generator
             </div>
-            <div className="text-6xl text-yellow-500 font-bold">⭐</div>
-            <div className="text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
+            <div className="text-5xl sm:text-6xl text-yellow-500 font-bold">
+              ⭐
+            </div>
+            <div className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
               AI Technology
             </div>
 
-            <div className="text-6xl text-yellow-500 font-bold">⭐</div>
-
+            <div className="text-5xl sm:text-6xl text-yellow-500 font-bold">
+              ⭐
+            </div>
           </div>
 
           {/* SECOND SET (DUPLICATE FOR SMOOTH LOOP) */}
-          <div className="flex items-center gap-24 pr-24">
-
-            <div className="text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
+          <div className="flex items-center gap-12 sm:gap-16 pr-8 sm:pr-16">
+            <div className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
               Generate With Ease
             </div>
-             <div className="text-6xl text-yellow-500 font-bold">⭐</div>
+            <div className="text-5xl sm:text-6xl text-yellow-500 font-bold">
+              ⭐
+            </div>
 
-            <div className="text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
+            <div className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
               Content Generator
             </div>
-             <div className="text-6xl text-yellow-500 font-bold">⭐</div>
+            <div className="text-5xl sm:text-6xl text-yellow-500 font-bold">
+              ⭐
+            </div>
 
-            <div className="text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
+            <div className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-900 whitespace-nowrap">
               AI Technology
             </div>
 
-            <div className="text-6xl text-yellow-500 font-bold">⭐</div>
-
+            <div className="text-5xl sm:text-6xl text-yellow-500 font-bold">
+              ⭐
+            </div>
           </div>
-
         </div>
       </div>
 
@@ -182,7 +177,6 @@ const OurProjects = () => {
           }
         `}
       </style>
-
     </section>
   );
 };

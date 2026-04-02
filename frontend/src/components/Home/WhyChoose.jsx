@@ -5,14 +5,13 @@ const WhyChoose = () => {
   return (
     <section className="py-12 md:py-20 w-full">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
-
         {/* MAIN CONTAINER - SAME AS SERVICES */}
-        <div className="relative rounded-2xl md:rounded-3xl overflow-hidden 
+        <div
+          className="relative rounded-2xl md:rounded-3xl overflow-hidden 
           bg-gradient-to-r from-[#0b0f3a] via-[#1a0f4c] to-[#5b2d8c] 
-          shadow-2xl w-full">
-
+          shadow-2xl w-full"
+        >
           <div className="grid lg:grid-cols-2">
-
             {/* LEFT IMAGE */}
             <div className="relative h-[350px] md:h-[500px]">
               <img
@@ -30,7 +29,6 @@ const WhyChoose = () => {
 
             {/* RIGHT CONTENT */}
             <div className="p-6 sm:p-8 md:p-10 lg:p-12 text-white">
-
               {/* SMALL TITLE */}
               <p className="text-red-500 font-semibold mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-500 rounded-full"></span>
@@ -52,12 +50,13 @@ const WhyChoose = () => {
 
               {/* BOTTOM SECTION */}
               <div className="grid md:grid-cols-2 border-t border-white/10 pt-8">
-
                 {/* LEFT SIDE */}
-                <div className="flex flex-col justify-center border-r border-white/10 pr-6">
-                  <h3 className="text-5xl sm:text-6xl font-bold 
+                <div className="flex flex-col justify-center md:border-r md:border-white/10 pr-0 md:pr-6">
+                  <h3
+                    className="text-5xl sm:text-6xl font-bold 
                     bg-gradient-to-r from-purple-500 to-pink-500 
-                    bg-clip-text text-transparent">
+                    bg-clip-text text-transparent"
+                  >
                     25+
                   </h3>
                   <p className="mt-3 text-white/80 text-lg">
@@ -66,8 +65,7 @@ const WhyChoose = () => {
                 </div>
 
                 {/* RIGHT SIDE */}
-                <div className="pl-6 space-y-8 mt-8 md:mt-0">
-
+                <div className="pl-0 md:pl-6 space-y-8 mt-8 md:mt-0">
                   {/* ITEM 1 */}
                   <div className="flex gap-4 group">
                     <div className="text-purple-400 text-3xl group-hover:scale-110 transition">
@@ -78,7 +76,8 @@ const WhyChoose = () => {
                         Technology Integration
                       </h4>
                       <p className="text-white/60 text-sm">
-                        We bring a team of experienced AI specialists, data scientists
+                        We bring a team of experienced AI specialists, data
+                        scientists
                       </p>
                     </div>
                   </div>
@@ -93,11 +92,11 @@ const WhyChoose = () => {
                         Certified Experts
                       </h4>
                       <p className="text-white/60 text-sm">
-                        We bring a team of experienced AI specialists, data scientists
+                        We bring a team of experienced AI specialists, data
+                        scientists
                       </p>
                     </div>
                   </div>
-
                 </div>
               </div>
 
@@ -105,13 +104,11 @@ const WhyChoose = () => {
               <p className="mt-10 text-white/70 text-sm">
                 Anyone Can Make You Promise We Can Give You Proof
               </p>
-
             </div>
           </div>
 
           {/* SAME GLASS EFFECT */}
           <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
-
         </div>
       </div>
     </section>

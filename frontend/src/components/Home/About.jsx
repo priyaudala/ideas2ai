@@ -12,17 +12,16 @@ const About = () => {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            
             {/* LEFT SIDE - Images */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="relative h-[600px] w-full"
+              className="relative w-full min-h-[360px] sm:min-h-[500px]"
             >
               {/* Main Image */}
-              <div className="absolute top-0 left-0 w-[85%] h-[450px] rounded-2xl overflow-hidden shadow-2xl z-10">
-                <img 
+              <div className="absolute top-0 left-0 w-full sm:w-[85%] h-[260px] sm:h-[380px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl z-10">
+                <img
                   src={aboutMainImg}
                   alt="AI Innovation"
                   className="w-full h-full object-cover"
@@ -33,8 +32,8 @@ const About = () => {
               </div>
 
               {/* Second Image (Overlapping with Main Image) */}
-              <div className="absolute bottom-[10%] right-[5%] w-[75%] h-[400px] rounded-2xl overflow-hidden shadow-2xl z-20">
-                <img 
+              <div className="absolute bottom-[1%] right-0 sm:right-[5%] w-[95%] sm:w-[75%] h-[220px] sm:h-[320px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl z-20">
+                <img
                   src={aboutOverlapImg1}
                   alt="AI Technology"
                   className="w-full h-full object-cover"
@@ -46,7 +45,7 @@ const About = () => {
             </motion.div>
 
             {/* RIGHT SIDE - Content */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -69,14 +68,14 @@ const About = () => {
 
               {/* Description */}
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                we are pioneers in the fusion of creativity and cutting-edge AI technology. 
-                Our mission is transform the way businesses approach design and digital 
-                strategy by delivering innovative,
+                we are pioneers in the fusion of creativity and cutting-edge AI
+                technology. Our mission is transform the way businesses approach
+                design and digital strategy by delivering innovative,
               </p>
 
               {/* Bullet Points */}
               <ul className="space-y-4 mt-8">
-                <motion.li 
+                <motion.li
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
@@ -84,11 +83,12 @@ const About = () => {
                 >
                   <span className="text-purple-600 text-xl mt-1">•</span>
                   <span className="text-gray-700 text-base sm:text-lg">
-                    Advanced Artificial Intelligence Capabilities for Enhanced Efficiency.
+                    Advanced Artificial Intelligence Capabilities for Enhanced
+                    Efficiency.
                   </span>
                 </motion.li>
 
-                <motion.li 
+                <motion.li
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
@@ -96,11 +96,12 @@ const About = () => {
                 >
                   <span className="text-purple-600 text-xl mt-1">•</span>
                   <span className="text-gray-700 text-base sm:text-lg">
-                    Real-time Data Analysis and Monitoring for Optimized Performance.
+                    Real-time Data Analysis and Monitoring for Optimized
+                    Performance.
                   </span>
                 </motion.li>
 
-                <motion.li 
+                <motion.li
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -108,13 +109,14 @@ const About = () => {
                 >
                   <span className="text-purple-600 text-xl mt-1">•</span>
                   <span className="text-gray-700 text-base sm:text-lg">
-                    Collaborative and Autonomous Robots for Seamless Integration.
+                    Collaborative and Autonomous Robots for Seamless
+                    Integration.
                   </span>
                 </motion.li>
               </ul>
 
               {/* Button and Third Image - Same Line */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -127,7 +129,7 @@ const About = () => {
 
                 {/* Third Image */}
                 <div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] rounded-2xl overflow-hidden shadow-xl border-4 border-white flex-shrink-0">
-                  <img 
+                  <img
                     src={aboutOverlapImg2}
                     alt="AI Robotics"
                     className="w-full h-full object-cover"

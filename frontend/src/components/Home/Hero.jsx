@@ -45,13 +45,18 @@ const Hero = () => {
   return (
     <section className="pt-24 md:pt-28 pb-12 md:pb-20 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8">
+        
         {/* Main Card Container - Full Width */}
         <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-r from-[#0b0f3a] via-[#1a0f4c] to-[#5b2d8c] shadow-2xl w-full">
+          
           {/* Content */}
           <div className="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12">
+            
             <div className="grid md:grid-cols-2 items-center gap-10 min-h-[520px] md:min-h-[560px]">
+
               {/* LEFT CONTENT */}
               <div className="text-white space-y-6 text-center md:text-left">
+
                 <p className="text-red-400 font-semibold tracking-wider text-sm">
                   ● SMARTER TECH FOR TOMORROW
                 </p>
@@ -86,24 +91,17 @@ const Hero = () => {
 
                 {/* BUTTON + CLIENTS */}
                 <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
+
                   <button className="bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-3 rounded-full font-semibold hover:scale-105 transition shadow-lg">
                     Get A Quote →
                   </button>
 
                   <div className="flex items-center gap-3">
+
                     <div className="flex -space-x-3">
-                      <img
-                        src={client1}
-                        className="w-9 h-9 rounded-full border-2 border-white object-cover"
-                      />
-                      <img
-                        src={client2}
-                        className="w-9 h-9 rounded-full border-2 border-white object-cover"
-                      />
-                      <img
-                        src={client3}
-                        className="w-9 h-9 rounded-full border-2 border-white object-cover"
-                      />
+                      <img src={client1} className="w-9 h-9 rounded-full border-2 border-white object-cover" />
+                      <img src={client2} className="w-9 h-9 rounded-full border-2 border-white object-cover" />
+                      <img src={client3} className="w-9 h-9 rounded-full border-2 border-white object-cover" />
 
                       <div className="w-9 h-9 flex items-center justify-center rounded-full bg-red-500 text-white text-xs border-2 border-white">
                         10+
@@ -114,12 +112,14 @@ const Hero = () => {
                       ⭐⭐⭐⭐⭐
                       <span className="text-white ml-2">20K+ users</span>
                     </div>
+
                   </div>
                 </div>
               </div>
 
               {/* RIGHT IMAGE */}
               <div className="flex justify-center items-center min-h-[300px] md:min-h-[450px] overflow-hidden">
+
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={current}
@@ -131,7 +131,9 @@ const Hero = () => {
                     className="object-contain w-full max-w-[500px]"
                   />
                 </AnimatePresence>
+
               </div>
+
             </div>
 
             {/* DOTS */}
@@ -145,8 +147,10 @@ const Hero = () => {
                 />
               ))}
             </div>
+
           </div>
         </div>
+
       </div>
     </section>
   );

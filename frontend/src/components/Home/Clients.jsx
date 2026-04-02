@@ -22,16 +22,13 @@ const Clients = () => {
   return (
     <section className="py-10 md:py-14 bg-[#f5f6f7] overflow-hidden">
       <div className="w-full px-4 md:px-8 lg:px-12">
-
         {/* MARQUEE WRAPPER */}
         <div className="relative w-full overflow-hidden">
-
           <div className="flex w-max animate-scroll gap-6">
-
             {clients.map((item, index) => (
               <div
                 key={index}
-                className="min-w-[220px] bg-white rounded-2xl border border-gray-200 
+                className="min-w-[180px] sm:min-w-[220px] bg-white rounded-2xl border border-gray-200 
                 flex flex-col items-center justify-center 
                 py-8 px-6 text-center shadow-sm"
               >
@@ -47,10 +44,8 @@ const Clients = () => {
                 </p>
               </div>
             ))}
-
           </div>
         </div>
-
       </div>
 
       {/* ANIMATION CSS */}

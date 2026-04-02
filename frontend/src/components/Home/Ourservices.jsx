@@ -32,12 +32,9 @@ const Services = () => {
   return (
     <section className="py-12 md:py-20 w-full">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
-        
         {/* Main Card Container */}
         <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-r from-[#0b0f3a] via-[#1a0f4c] to-[#5b2d8c] shadow-2xl w-full">
-          
           <div className="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12">
-            
             {/* HEADINGS */}
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-red-500 mb-3 md:mb-4">
@@ -58,7 +55,7 @@ const Services = () => {
                   className={`
                     group relative flex flex-col items-center text-center p-6 sm:p-8 
                     transition-all duration-500 cursor-pointer 
-                    min-h-[450px] sm:min-h-[480px] md:min-h-[500px]
+                    min-h-[360px] sm:min-h-[420px] md:min-h-[500px]
                     ${index !== services.length - 1 ? "border-r border-white/10" : ""}
                     ${index === 0 ? "rounded-t-2xl sm:rounded-l-2xl" : ""}
                     ${index === services.length - 1 ? "rounded-b-2xl sm:rounded-r-2xl" : ""}
@@ -69,10 +66,9 @@ const Services = () => {
                 >
                   {/* Hover Background Effect */}
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                  
+
                   {/* Content */}
                   <div className="relative z-10 flex flex-col items-center justify-between h-full w-full">
-                    
                     {/* DESCRIPTION */}
                     <p className="text-white/60 text-xs sm:text-sm leading-relaxed mb-8 sm:mb-10 md:mb-12 max-w-[240px] sm:max-w-[260px] md:max-w-[280px] group-hover:text-white/80 transition-colors duration-300">
                       {item.desc}
@@ -99,7 +95,7 @@ const Services = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Decorative Glass Effect Overlay */}
           <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
         </div>
