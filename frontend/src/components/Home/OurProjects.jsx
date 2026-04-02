@@ -5,7 +5,7 @@ import img1 from "../../assets/project-img1.jpg";
 import img2 from "../../assets/project-img2.jpg";
 import img3 from "../../assets/project-img3.jpg";
 
-const OurProducts = () => {
+const OurProjects = () => {
   const [active, setActive] = useState(null);
 
   const toggleProject = (id) => {
@@ -187,4 +187,4 @@ const OurProducts = () => {
   );
 };
 
-export default OurProducts;
+export default OurProjects;

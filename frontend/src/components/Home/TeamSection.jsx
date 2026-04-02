@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Facebook, Linkedin } from "lucide-react";
 import { FaPinterest, FaTwitter, FaInstagram } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -136,7 +135,7 @@ export default function TeamSection() {
                               rounded-b-[20px] sm:rounded-r-[40px] sm:rounded-bl-none 
                               flex items-center gap-3 sm:gap-4 shadow-sm">
 
-                {[Facebook, FaTwitter, Linkedin, FaPinterest, FaInstagram].map(
+                {[FaTwitter, FaTwitter, FaTwitter, FaPinterest, FaInstagram].map(
                   (Icon, i) => (
                     <motion.div
                       key={i}
