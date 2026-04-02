@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPinterest, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaPinterest,FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 import team1 from "../../assets/team-thumb1.jpg";
@@ -135,7 +135,7 @@ export default function TeamSection() {
                               rounded-b-[20px] sm:rounded-r-[40px] sm:rounded-bl-none 
                               flex items-center gap-3 sm:gap-4 shadow-sm">
 
-                {[FaTwitter, FaTwitter, FaTwitter, FaPinterest, FaInstagram].map(
+                {[FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaInstagram].map(
                   (Icon, i) => (
                     <motion.div
                       key={i}
