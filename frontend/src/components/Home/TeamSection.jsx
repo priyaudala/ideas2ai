@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { FaPinterest,FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-import team1 from "../../assets/team-thumb1.jpg";
-import team2 from "../../assets/team-thumb2.jpg";
-import team3 from "../../assets/team-thumb3.jpg";
+import team1 from "../../assets/team-thumb1.avif";
+import team2 from "../../assets/team-thumb2.webp";
+import team3 from "../../assets/team-thumb3.webp";
 
 export default function TeamSection() {
   const teamData = [
@@ -35,7 +35,7 @@ export default function TeamSection() {
   const selected = teamData[active];
 
   return (
-    <section className="bg-[#f6f7fb] py-16 sm:py-20 md:py-24 overflow-hidden">
+    <section className=" py-16 sm:py-20 md:py-24 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* HEADER */}

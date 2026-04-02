@@ -15,7 +15,7 @@ export default function AiJourneySection() {
   };
 
   return (
-    <section className="bg-[#f5f6fa] py-20 md:py-28 overflow-hidden relative">
+    <section className="py-20 md:py-28 overflow-hidden relative">
 
       <div className="max-w-[1240px] mx-auto px-6 text-center relative z-10">
 

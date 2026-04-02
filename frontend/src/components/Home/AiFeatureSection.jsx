@@ -26,7 +26,7 @@ export default function AiFeaturesSection() {
   };
 
   return (
-    <section className="bg-[#f5f6fa] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <motion.p className="text-red-500 text-[10px] sm:text-xs font-semibold tracking-widest mb-4">
