@@ -69,8 +69,8 @@ const OurProjects = () => {
 
                     <button
                       onClick={() => toggleProject(p.id)}
-                      className={`w-10 h-10 flex items-center justify-center rounded-full border transition
-                      ${active === p.id ? "bg-purple-100 rotate-90" : "hover:bg-purple-50"}`}
+                      className={`w-10 h-10 flex items-center justify-center rounded-full border transition bg-gradient-to-r from-purple-500 to-pink-500
+                      ${active === p.id ? "bg-purple-100 rotate-90" : ""}`}
                     >
                       <FiArrowRight />
                     </button>

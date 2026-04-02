@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhoneAlt,
+  FaArrowUp,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -29,8 +30,53 @@ const Footer = () => {
     },
   };
 
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="bg-[#070B2D] px-4 sm:px-6 pb-10 sm:pb-12">
+    <footer className="bg-[#070B2D] px-4 sm:px-6 pb-10 sm:pb-12 relative">
+      {/* Up Arrow Button - positioned at right side outside the main div */}
+      <motion.button
+        onClick={scrollToTop}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        whileHover={{ 
+          scale: 1.1,
+          y: -5,
+          boxShadow: "0 0 20px rgba(139, 92, 246, 0.6)"
+        }}
+        whileTap={{ scale: 0.95 }}
+        className="
+          absolute 
+          bottom-24 
+          right-4 
+          sm:right-8 
+          lg:right-12
+          bg-purple-600 
+          hover:bg-purple-700
+          text-white 
+          rounded-full 
+          w-12 h-12 
+          flex items-center justify-center
+          shadow-lg
+          transition-all
+          duration-300
+          cursor-pointer
+          border-2
+          border-purple-400
+          z-20
+        "
+        aria-label="Scroll to top"
+      >
+        <FaArrowUp size={20} />
+      </motion.button>
+
       <motion.div
         variants={container}
         initial="hidden"
