@@ -177,7 +177,7 @@ const Navbar = () => {
             onClick={closeMobileMenu}
           ></div>
           
-          <div className="absolute top-14 sm:top-16 left-0 right-0 bg-gradient-to-r from-[#0b0f3a] via-[#1a0f4c] to-[#5b2d8c] shadow-xl max-h-[calc(100vh-3.5rem)] overflow-y-auto animate-slideLeft">
+          <div className="absolute top-14 sm:top-16 md:top-20 left-0 right-0 bg-gradient-to-r from-[#0b0f3a] via-[#1a0f4c] to-[#5b2d8c] shadow-xl max-h-[calc(100vh-3.5rem)] sm:max-h-[calc(100vh-4rem)] md:max-h-[calc(100vh-5rem)] overflow-y-auto animate-slideLeft">
             <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
               <div className="max-w-7xl mx-auto py-4 sm:py-6 space-y-2 sm:space-y-3">
                 

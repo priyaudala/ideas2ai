@@ -16,7 +16,7 @@ import SubscribeSection from "../components/Home/SubscribeSection.jsx";
 
 const Home = () => {
   return (
-    <div className="bg-[#070B2D] min-h-screen text-white">
+    <div className="text-white">
       <Hero />
       <About />
       <Services />
