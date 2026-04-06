@@ -115,28 +115,31 @@ const About = () => {
                 </motion.li>
               </ul>
 
-              {/* Button and Third Image - Same Line */}
+              {/* Button and Third Image - Improved Mobile Responsiveness */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="mt-8 flex flex-wrap items-center justify-between gap-4 w-full"
+                className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 w-full"
               >
-                {/* View All Project Button */}
-                <button className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold hover:scale-105 transition shadow-lg text-white whitespace-nowrap text-sm sm:text-base">
+                {/* View All Project Button - Full width on mobile */}
+                <button className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-2.5 rounded-full font-semibold hover:scale-105 transition shadow-lg text-white w-full sm:w-auto text-center text-sm">
                   View All Project →
                 </button>
 
-                {/* Third Image */}
-                <div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] rounded-2xl overflow-hidden shadow-xl border-4 border-white flex-shrink-0">
-                  <img
-                    src={aboutOverlapImg2}
-                    alt="AI Robotics"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.src = `https://via.placeholder.com/150x150/8b5cf6/ffffff?text=AI`;
-                    }}
-                  />
+                {/* Third Image - Larger on mobile */}
+                <div className="flex justify-center w-full sm:w-auto">
+                  <div className="w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] flex-shrink-0">
+                    <img
+                      src={aboutOverlapImg2}
+                      alt="AI Robotics"
+                      className="w-full h-full object-contain"
+                      style={{ background: 'transparent' }}
+                      onError={(e) => {
+                        e.target.src = `https://via.placeholder.com/150x150/8b5cf6/ffffff?text=AI`;
+                      }}
+                    />
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
