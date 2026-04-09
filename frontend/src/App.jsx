@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Home/Navbar.jsx";
 import Footer from "./components/Layout/Footer";
-import SubscribeSection from "../components/Home/SubscribeSection.jsx";
+import SubscribeSection from "./components/Home/SubscribeSection.jsx";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
