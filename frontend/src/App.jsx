@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Home/Navbar.jsx";
 import Footer from "./components/Layout/Footer";
+import SubscribeSection from "../components/Home/SubscribeSection.jsx";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -25,7 +26,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-
+        <SubscribeSection />
         <Footer />
       </div>
     </Router>

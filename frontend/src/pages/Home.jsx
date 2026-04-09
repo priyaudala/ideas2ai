@@ -12,7 +12,6 @@ import PricingSection from "../components/Home/PricingSection.jsx";
 import TeamSection from "../components/Home/TeamSection";
 import ContactSection from "../components/Home/ContactSection.jsx";
 import BlogSection from "../components/Home/BlogSection.jsx";
-import SubscribeSection from "../components/Home/SubscribeSection.jsx";
 
 const Home = () => {
   return (
@@ -30,7 +29,6 @@ const Home = () => {
       <TeamSection />
       <ContactSection />
       <BlogSection />
-      <SubscribeSection />
     </div>
   );
 };
