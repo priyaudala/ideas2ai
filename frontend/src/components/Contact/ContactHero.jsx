@@ -5,10 +5,16 @@ const ContactHero = () => {
     <section className="pt-24 md:pt-28">
       <div className="relative w-full h-[300px] md:h-[350px] flex items-center justify-center text-center text-white overflow-hidden">
 
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f3a] via-[#1a0f4c] to-[#5b2d8c]" />
+        {/* ✅ Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/bgimg.jpeg')" }}
+        />
 
-        {/* Overlay Glow */}
+        {/* ✅ Dark Overlay (important for text visibility) */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* Optional Glow */}
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,#ffffff,transparent_60%)]" />
 
         {/* Content */}
@@ -20,6 +26,7 @@ const ContactHero = () => {
             Home <span className="mx-2">›</span> Contact Us
           </p>
         </div>
+
       </div>
     </section>
   );
