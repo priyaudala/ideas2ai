@@ -5,7 +5,7 @@ import ContactForm from "../components/Contact/ContactForm";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-white">
       <ContactHero />
       <ContactInfo />
       <ContactForm />
