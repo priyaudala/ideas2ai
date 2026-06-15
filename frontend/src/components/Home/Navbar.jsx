@@ -40,18 +40,20 @@ const Navbar = () => {
       if (openDropdown && !event.target.closest(".dropdown-container")) {
         setOpenDropdown(null);
       }
-      
+
       // Close mobile menu when clicking outside nav AND mobile menu
-      if (mobileOpen && 
-          !navRef.current?.contains(event.target) && 
-          !mobileMenuRef.current?.contains(event.target)) {
+      if (
+        mobileOpen &&
+        !navRef.current?.contains(event.target) &&
+        !mobileMenuRef.current?.contains(event.target)
+      ) {
         closeMobileMenu();
       }
     };
-    
+
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("touchstart", handleClickOutside);
-    
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
@@ -69,7 +71,7 @@ const Navbar = () => {
         }
       }
     };
-    
+
     document.addEventListener("keydown", handleEscKey);
     return () => document.removeEventListener("keydown", handleEscKey);
   }, [mobileOpen, openDropdown]);
@@ -83,7 +85,7 @@ const Navbar = () => {
       document.body.style.overflow = "unset";
       document.body.style.touchAction = "auto";
     }
-    
+
     return () => {
       document.body.style.overflow = "unset";
       document.body.style.touchAction = "auto";
@@ -161,7 +163,7 @@ const Navbar = () => {
                 >
                   Home
                 </Link>
-                
+
                 <Link
                   to="/about"
                   className="hover:text-purple-300 transition duration-300 text-sm xl:text-base 2xl:text-lg whitespace-nowrap px-1 py-2"
@@ -183,25 +185,20 @@ const Navbar = () => {
                   {openDropdown === "services" && (
                     <div className="absolute top-full left-0 mt-2 bg-white text-black rounded-lg shadow-2xl w-48 xl:w-56 2xl:w-64 p-4 space-y-2 z-50 animate-fadeIn border border-purple-100">
                       <Link
-                        to="/services"
+                        to="/services/ourservices"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
                         onClick={() => handleNavigation("/services")}
                       >
-                        All Services
+                        Our Services
                       </Link>
                       <Link
-                        to="/services/web-development"
+                        to="/services/servicedetails"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
-                        onClick={() => handleNavigation("/services/web-development")}
+                        onClick={() =>
+                          handleNavigation("/services/web-development")
+                        }
                       >
-                        Web Development
-                      </Link>
-                      <Link
-                        to="/services/ai-solutions"
-                        className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
-                        onClick={() => handleNavigation("/services/ai-solutions")}
-                      >
-                        AI Solutions
+                        Service Details
                       </Link>
                     </div>
                   )}
@@ -243,7 +240,6 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-
                 {/* Blog Dropdown */}
                 <div className="relative dropdown-container">
                   <button
@@ -257,23 +253,31 @@ const Navbar = () => {
                   {openDropdown === "blog" && (
                     <div className="absolute top-full left-0 mt-2 bg-white text-black rounded-lg shadow-2xl w-48 xl:w-56 2xl:w-64 p-4 space-y-2 z-50 animate-fadeIn border border-purple-100">
                       <Link
-                        to="/blog"
+                        to="/blog/grid"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
-                        onClick={() => handleNavigation("/blog")}
+                        onClick={() => handleNavigation("/blog/grid")}
                       >
-                        Blog List
+                        Blog Grid
                       </Link>
+
                       <Link
-                        to="/blog/blog-details"
+                        to="/blog/details"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
-                        onClick={() => handleNavigation("/blog/blog-details")}
+                        onClick={() => handleNavigation("/blog/details")}
                       >
                         Blog Details
+                      </Link>
+
+                      <Link
+                        to="/blog/sidebar"
+                        className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
+                        onClick={() => handleNavigation("/blog/sidebar")}
+                      >
+                        Blog Sidebar
                       </Link>
                     </div>
                   )}
                 </div>
-
                 <Link
                   to="/contact"
                   className="hover:text-purple-300 transition duration-300 text-sm xl:text-base 2xl:text-lg whitespace-nowrap px-1 py-2"
@@ -285,12 +289,18 @@ const Navbar = () => {
 
               {/* Right Side - Desktop Actions */}
               <div className="hidden lg:flex items-center space-x-4 xl:space-x-5 2xl:space-x-6">
-                <button className="text-white text-lg xl:text-xl 2xl:text-2xl hover:text-purple-300 transition p-1" aria-label="Search">
+                <button
+                  className="text-white text-lg xl:text-xl 2xl:text-2xl hover:text-purple-300 transition p-1"
+                  aria-label="Search"
+                >
                   <FiSearch />
                 </button>
 
                 <div className="relative">
-                  <button className="text-white text-lg xl:text-xl 2xl:text-2xl hover:text-purple-300 transition p-1" aria-label="Cart">
+                  <button
+                    className="text-white text-lg xl:text-xl 2xl:text-2xl hover:text-purple-300 transition p-1"
+                    aria-label="Cart"
+                  >
                     <FiShoppingCart />
                   </button>
                   <span className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold">
@@ -298,7 +308,7 @@ const Navbar = () => {
                   </span>
                 </div>
 
-                <button 
+                <button
                   onClick={() => handleNavigation("/get-started")}
                   className="bg-gradient-to-r from-purple-500 to-pink-500 px-4 xl:px-5 2xl:px-6 py-1.5 xl:py-2 2xl:py-2.5 rounded-full text-white font-semibold hover:scale-105 transition duration-300 shadow-lg text-sm xl:text-base 2xl:text-lg whitespace-nowrap hover:shadow-purple-500/30"
                 >
@@ -340,7 +350,7 @@ const Navbar = () => {
                 >
                   Home
                 </Link>
-                
+
                 <Link
                   to="/about"
                   className="block py-3 sm:py-4 text-white text-lg sm:text-xl font-medium hover:text-purple-300 transition border-b border-white/20 px-4"
@@ -369,25 +379,18 @@ const Navbar = () => {
                   {mobileDropdowns.services && (
                     <div className="pl-8 pb-3 space-y-2 animate-fadeIn">
                       <Link
-                        to="/services"
+                        to="/services/ourservices"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
-                        All Services
+                        Our Services
                       </Link>
                       <Link
-                        to="/services/web-development"
+                        to="/services/servicedetails"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
-                        Web Development
-                      </Link>
-                      <Link
-                        to="/services/ai-solutions"
-                        className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
-                        onClick={closeMobileMenu}
-                      >
-                        AI Solutions
+                        Service Details
                       </Link>
                     </div>
                   )}
@@ -453,22 +456,30 @@ const Navbar = () => {
                       )}
                     </span>
                   </button>
-
                   {mobileDropdowns.blog && (
                     <div className="pl-8 pb-3 space-y-2 animate-fadeIn">
                       <Link
-                        to="/blog"
+                        to="/blog/grid"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
-                        Blog List
+                        Blog Grid
                       </Link>
+
                       <Link
-                        to="/blog/blog-details"
+                        to="/blog/details"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
                         Blog Details
+                      </Link>
+
+                      <Link
+                        to="/blog/sidebar"
+                        className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
+                        onClick={closeMobileMenu}
+                      >
+                        Blog Sidebar
                       </Link>
                     </div>
                   )}
@@ -484,11 +495,17 @@ const Navbar = () => {
 
                 {/* Mobile Action Buttons */}
                 <div className="flex items-center justify-center gap-8 sm:gap-10 pt-6 sm:pt-8 px-4">
-                  <button className="text-white text-2xl sm:text-3xl hover:text-purple-300 transition p-2" aria-label="Search">
+                  <button
+                    className="text-white text-2xl sm:text-3xl hover:text-purple-300 transition p-2"
+                    aria-label="Search"
+                  >
                     <FiSearch />
                   </button>
                   <div className="relative">
-                    <button className="text-white text-2xl sm:text-3xl hover:text-purple-300 transition p-2" aria-label="Cart">
+                    <button
+                      className="text-white text-2xl sm:text-3xl hover:text-purple-300 transition p-2"
+                      aria-label="Cart"
+                    >
                       <FiShoppingCart />
                     </button>
                     <span className="absolute -top-1 -right-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm w-6 h-6 flex items-center justify-center rounded-full font-bold">
@@ -497,7 +514,7 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                <button 
+                <button
                   onClick={() => handleNavigation("/get-started")}
                   className="w-11/12 mx-auto bg-gradient-to-r from-purple-500 to-pink-500 py-3.5 sm:py-4 rounded-full text-white font-bold text-lg sm:text-xl mt-8 hover:scale-105 transition duration-300 shadow-xl hover:shadow-purple-500/40 block"
                 >

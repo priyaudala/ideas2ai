@@ -8,9 +8,11 @@ import SubscribeSection from "./components/Home/SubscribeSection.jsx";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Products from "./pages/Products";
-import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs.jsx";
+import BlogGridPage from "./pages/Blog/BlogGridPage";
+import BlogDetailsPage from "./pages/Blog/BlogDetailsPage";
+import BlogSidebarPage from "./pages/Blog/BlogSidebarPage";
 
 function App() {
   return (
@@ -23,8 +25,10 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog/grid" element={<BlogGridPage />} />
+          <Route path="/blog/details" element={<BlogDetailsPage />} />
+          <Route path="/blog/sidebar" element={<BlogSidebarPage />} />
         </Routes>
         <SubscribeSection />
         <Footer />

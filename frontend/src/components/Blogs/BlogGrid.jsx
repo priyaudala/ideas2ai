@@ -19,9 +19,9 @@ const BlogGrid = () => {
 
           {/* Content */}
           <div className="relative z-10">
-            <h1 className="text-3xl md:text-5xl font-bold mb-3">Contact Us</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-3">Blog Grid</h1>
             <p className="text-gray-300 text-sm md:text-base">
-              Home <span className="mx-2">›</span> Contact Us
+              Home <span className="mx-2">›</span> Blog Grid
             </p>
           </div>
         </div>
