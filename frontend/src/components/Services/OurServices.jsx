@@ -1,88 +1,439 @@
-// import React from 'react'
-
-// const OurServices = () => {
-//   return (
-//     <div>
-//       <section className="pt-24 md:pt-28">
-//         <div className="relative w-full h-[300px] md:h-[350px] flex items-center justify-center text-center text-white overflow-hidden">
-//           {/* ✅ Background Image */}
-//           <div
-//             className="absolute inset-0 bg-cover bg-center"
-//             style={{ backgroundImage: "url('/bgimg.jpeg')" }}
-//           />
-
-//           {/* ✅ Dark Overlay (important for text visibility) */}
-//           <div className="absolute inset-0 bg-black/50" />
-
-//           {/* Optional Glow */}
-//           <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,#ffffff,transparent_60%)]" />
-
-//           {/* Content */}
-//           <div className="relative z-10">
-//             <h1 className="text-3xl md:text-5xl font-bold mb-3">Our Services</h1>
-//             <p className="text-gray-300 text-sm md:text-base">
-//               Home <span className="mx-2">›</span> Our Services
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   )
-// }
-
-// export default OurServices
-
-// src/components/Services/OurServices.jsx
-
 import React from "react";
-import { motion } from "framer-motion";
-import pageBg from "../../assets/page-bg.jpg"; // same image used in About Us
+
+import icon10 from "../../assets/icon10.png";
+import icon11 from "../../assets/icon11.png";
+import icon12 from "../../assets/icon12.png";
+import icon13 from "../../assets/icon13.png";
+
+import serviceShape from "../../assets/service-shape.png";
+
+import featureImg1 from "../../assets/feature-img1.jpg";
+import featureImg2 from "../../assets/feature-img2.jpg";
+import pircingLogo from "../../assets/pircing-logo.png";
+
+const services = [
+  {
+    id: "01",
+    title: "AI-Powered Solution",
+    icon: icon10,
+  },
+  {
+    id: "02",
+    title: "Custom Technology",
+    icon: icon11,
+  },
+  {
+    id: "03",
+    title: "Machine Learning",
+    icon: icon12,
+  },
+  {
+    id: "04",
+    title: "Predicative Analytics",
+    icon: icon13,
+  },
+  {
+    id: "05",
+    title: "Automation Process",
+    icon: icon11,
+  },
+  {
+    id: "06",
+    title: "Education & Science",
+    icon: icon12,
+  },
+];
 
 const OurServices = () => {
   return (
-    <section
-      className="
-        relative w-full rounded-2xl md:rounded-3xl overflow-hidden
-        mt-16 sm:mt-20 md:mt-24 lg:mt-28
-        min-h-[300px] sm:min-h-[350px] md:min-h-[420px] lg:min-h-[500px]
-      "
-      style={{
-        backgroundImage: `url(${pageBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+    <div>
+      {/* Hero Section */}
+      <section className="pt-24 md:pt-28">
+        <div className="relative w-full h-[300px] md:h-[350px] flex items-center justify-center text-center text-white overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/bgimg.jpeg')" }}
+          />
 
-      {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full p-8 md:p-12 lg:p-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Our Services
-          </h1>
+          <div className="absolute inset-0 bg-black/50" />
 
-          {/* Breadcrumb */}
-          <div className="flex items-center justify-center gap-2 text-gray-300 text-sm md:text-base">
-            <span className="hover:text-white cursor-pointer transition">
-              Home
-            </span>
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,#ffffff,transparent_60%)]" />
 
-            <span className="text-gray-400">&gt;</span>
-
-            <span className="text-purple-400">
+          <div className="relative z-10">
+            <h1 className="text-3xl md:text-5xl font-bold mb-3">
               Our Services
-            </span>
+            </h1>
+
+            <p className="text-gray-300 text-sm md:text-base">
+              Home <span className="mx-2">›</span> Our Services
+            </p>
           </div>
-        </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-[#f8f8f8]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-red-500 font-semibold uppercase tracking-wider mb-4">
+              ● OUR BEST SERVICES
+            </p>
+
+            <h2 className="text-[#06164a] text-4xl md:text-5xl font-bold leading-tight">
+              Best Innovative Solution for
+              <br />
+              Businesses
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="bg-white rounded-[30px] p-8 min-h-[380px] relative overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                {/* Shape */}
+                <div className="absolute top-0 right-0 opacity-15 pointer-events-none">
+                  <img
+                    src={serviceShape}
+                    alt="shape"
+                    className="w-44"
+                  />
+                </div>
+
+                {/* Number */}
+                <h3 className="text-[#06164a] text-2xl font-bold mb-10 relative z-10">
+                  {service.id}
+                </h3>
+
+                {/* Icon */}
+                <div className="w-14 h-14 mb-8 relative z-10">
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                {/* Title */}
+                <h4 className="text-[#06164a] text-[24px] md:text-[28px] font-bold leading-tight mb-6 relative z-10">
+                  {service.title}
+                </h4>
+
+                {/* Description */}
+                <p className="text-gray-500 text-base leading-8 mb-8 relative z-10">
+                  Specialize in delivering AI-powered solution revolutionize
+                  the way businesses operate. By leveraging the latest.
+                </p>
+
+                {/* Read More */}
+                <button className="text-[#06164a] font-bold text-lg flex items-center gap-2 hover:text-red-500 transition relative z-10">
+                  Read More
+                  <span>↗</span>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+{/* Feature Section */}
+<section className="py-24 bg-[#f8f8f8] overflow-hidden">
+  <div className="max-w-[1400px] mx-auto px-6">
+    <div className="grid lg:grid-cols-[42%_58%] gap-8 items-start">
+
+      {/* LEFT SIDE IMAGES */}
+      <div className="relative">
+
+        {/* First Image */}
+        <img
+          src={featureImg1}
+          alt="Feature"
+          className="w-[300px] h-[400px] object-cover rounded-[30px]"
+        />
+
+        {/* Floating Card */}
+        <div className="absolute left-[50px] bottom-[80px] bg-white rounded-[24px] shadow-xl px-6 py-4 z-20">
+          <div className="flex items-center gap-4">
+
+            <div className="flex -space-x-3">
+              <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white"></div>
+              <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white"></div>
+              <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-white"></div>
+            </div>
+
+            <div>
+              <h4 className="text-[#e63946] text-2xl font-bold">
+                10+
+              </h4>
+              <p className="text-gray-500 text-sm">
+                20K+ users
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Second Image */}
+        <img
+          src={featureImg2}
+          alt="AI Feature"
+          className="
+            w-[380px]
+            h-[430px]
+            object-cover
+            rounded-[30px]
+            ml-[140px]
+            -mt-[90px]
+            relative
+            z-10
+          "
+        />
+
       </div>
-    </section>
+
+      {/* RIGHT CONTENT */}
+      <div className="pt-0">
+
+        <p className="text-[#e63946] font-semibold uppercase tracking-widest mb-3 text-sm">
+          ● OUR FEATURE
+        </p>
+
+        <h2
+          className="
+            text-[#06164a]
+            text-[28px]
+            md:text-[34px]
+            lg:text-[40px]
+            font-bold
+            leading-[1.2]
+            mb-6
+            max-w-[650px]
+          "
+        >
+          The Smarter Choice For AI-Powered
+          <br />
+          Creativity and Visual Excellence
+        </h2>
+
+        {/* Feature 1 */}
+        <div className="mb-6">
+          <h3 className="text-[22px] font-bold text-[#06164a] mb-3">
+            Advanced AI Technology
+          </h3>
+
+          <p className="text-gray-500 text-[16px] leading-7 max-w-[600px]">
+            We use the latest AI models to generate high-quality visuals
+            with precision and creativity.
+          </p>
+        </div>
+
+        {/* Feature 2 */}
+        <div className="mb-8">
+          <h3 className="text-[22px] font-bold text-[#06164a] mb-3">
+            Unlimited Creativity
+          </h3>
+
+          <p className="text-gray-500 text-[16px] leading-7 max-w-[600px]">
+            We use the latest AI models to generate high-quality visuals
+            with precision and creativity.
+          </p>
+        </div>
+
+        {/* Stats Cards */}
+        <div className="grid md:grid-cols-2 gap-5 max-w-[560px]">
+
+          <div className="bg-white rounded-[24px] p-7 shadow-sm">
+            <h4 className="text-[#e63946] text-4xl font-bold mb-2">
+              70+
+            </h4>
+
+            <p className="text-[#06164a] text-lg font-bold leading-relaxed">
+              Support for Global
+              <br />
+              Language
+            </p>
+          </div>
+
+          <div className="bg-white rounded-[24px] p-7 shadow-sm">
+            <h4 className="text-[#e63946] text-4xl font-bold mb-2">
+              3X
+            </h4>
+
+            <p className="text-[#06164a] text-lg font-bold leading-relaxed">
+              Faster Content
+              <br />
+              Production
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>{/* Pricing Section */}
+<section className="py-24 bg-[#f8f8f8] relative overflow-hidden">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+
+      <p className="text-[#e63946] uppercase font-semibold tracking-widest text-base mb-4">
+        ● POPULAR PACKAGE
+      </p>
+
+      <h2 className="text-[#06164a] text-[30px] md:text-[42px] font-bold leading-[1.15]">
+        Flexible Pricing, Powerful
+        <br />
+        Tangible Results
+      </h2>
+
+    </div>
+
+    {/* Pricing Cards */}
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+
+      {/* Standard */}
+      <div className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden">
+
+        <img
+          src={pircingLogo}
+          alt="Pircing Logo"
+          className="w-12 h-12 object-contain mb-5"
+        />
+
+        <h3 className="text-[#06164a] text-[24px] font-bold mb-1">
+          Standard
+        </h3>
+
+        <p className="text-gray-500 text-base mb-5">
+          Ideal For Personal Projects
+        </p>
+
+        <div className="mb-8">
+          <span className="text-[#06164a] text-[56px] font-bold">
+            $29
+          </span>
+
+          <span className="text-gray-500 text-xl font-medium">
+            /Per Month
+          </span>
+        </div>
+
+        <hr className="mb-8 border-gray-200" />
+
+        <ul className="space-y-4 text-gray-600 text-base">
+          <li>✓ Access AI tools</li>
+          <li>✓ Exclusive features</li>
+          <li>✓ Discord access</li>
+          <li>✓ 24/7 support</li>
+        </ul>
+
+        <button className="mt-8 bg-[#06164a] text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-[#0a2468] transition">
+          View All Price →
+        </button>
+
+      </div>
+
+      {/* Professional */}
+      <div className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden">
+
+        <div className="absolute top-8 right-8 bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
+          Popular
+        </div>
+
+        <img
+          src={pircingLogo}
+          alt="Pircing Logo"
+          className="w-12 h-12 object-contain mb-5"
+        />
+
+        <h3 className="text-[#06164a] text-[24px] font-bold mb-1">
+          Professional
+        </h3>
+
+        <p className="text-gray-500 text-base mb-5">
+          Ideal For Personal Projects
+        </p>
+
+        <div className="mb-8">
+          <span className="text-[#06164a] text-[56px] font-bold">
+            $69
+          </span>
+
+          <span className="text-gray-500 text-xl font-medium">
+            /Per Month
+          </span>
+        </div>
+
+        <hr className="mb-8 border-gray-200" />
+
+        <ul className="space-y-4 text-gray-600 text-base">
+          <li>✓ Access AI tools</li>
+          <li>✓ Exclusive features</li>
+          <li>✓ Discord access</li>
+          <li>✓ 24/7 support</li>
+        </ul>
+
+        <button className="mt-8 bg-[#06164a] text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-[#0a2468] transition">
+          View All Price →
+        </button>
+
+      </div>
+
+      {/* Business */}
+      <div className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden">
+
+        <img
+          src={pircingLogo}
+          alt="Pircing Logo"
+          className="w-12 h-12 object-contain mb-5"
+        />
+
+        <h3 className="text-[#06164a] text-[24px] font-bold mb-1">
+          Business
+        </h3>
+
+        <p className="text-gray-500 text-base mb-5">
+          Ideal For Personal Projects
+        </p>
+
+        <div className="mb-8">
+          <span className="text-[#06164a] text-[56px] font-bold">
+            $99
+          </span>
+
+          <span className="text-gray-500 text-xl font-medium">
+            /Per Month
+          </span>
+        </div>
+
+        <hr className="mb-8 border-gray-200" />
+
+        <ul className="space-y-4 text-gray-600 text-base">
+          <li>✓ Access AI tools</li>
+          <li>✓ Exclusive features</li>
+          <li>✓ Discord access</li>
+          <li>✓ 24/7 support</li>
+        </ul>
+
+        <button className="mt-8 bg-[#06164a] text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-[#0a2468] transition">
+          View All Price →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+    </div>
   );
 };
+
 
 export default OurServices;
