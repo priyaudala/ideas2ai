@@ -8,7 +8,10 @@ import SubscribeSection from "./components/Home/SubscribeSection.jsx";
 import Home from "./pages/Home";
 import OurservicesPage from "./pages/Service/OurServicesPage.jsx";
 import ServiceDetailsPage from "./pages/Service/ServiceDetailsPage.jsx";
-import Products from "./pages/Products";
+import Product1Page from "./pages/Product/Product1Page.jsx";
+import Product2Page from "./pages/Product/Product2Page.jsx";
+import Product3Page from "./pages/Product/Product3Page.jsx";
+import Products from "./pages/Products.jsx";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs.jsx";
 import BlogGridPage from "./pages/Blog/BlogGridPage";
@@ -26,7 +29,9 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
          <Route path="/services/ourservices" element={<OurservicesPage />} />
          <Route path="/services/servicedetails" element={<ServiceDetailsPage />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/products/product1" element={<Product1Page />} />
+          <Route path="/products/product2" element={<Product2Page />} />
+          <Route path="/products/product3" element={<Product3Page />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog/grid" element={<BlogGridPage />} />
           <Route path="/blog/details" element={<BlogDetailsPage />} />

@@ -217,25 +217,25 @@ const Navbar = () => {
                   {openDropdown === "products" && (
                     <div className="absolute top-full left-0 mt-2 bg-white text-black rounded-lg shadow-2xl w-48 xl:w-56 2xl:w-64 p-4 space-y-2 z-50 animate-fadeIn border border-purple-100">
                       <Link
-                        to="/products"
+                        to="/products/product1"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
                         onClick={() => handleNavigation("/products")}
-                      >
-                        All Products
-                      </Link>
-                      <Link
-                        to="/products/product-1"
-                        className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
-                        onClick={() => handleNavigation("/products/product-1")}
                       >
                         Product 1
                       </Link>
                       <Link
-                        to="/products/product-2"
+                        to="/products/product2"
+                        className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
+                        onClick={() => handleNavigation("/products/product-1")}
+                      >
+                        Product 2
+                      </Link>
+                      <Link
+                        to="/products/product3"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
                         onClick={() => handleNavigation("/products/product-2")}
                       >
-                        Product 2
+                        Product 3
                       </Link>
                     </div>
                   )}
@@ -416,25 +416,25 @@ const Navbar = () => {
                   {mobileDropdowns.products && (
                     <div className="pl-8 pb-3 space-y-2 animate-fadeIn">
                       <Link
-                        to="/products"
+                        to="/products/product1"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
-                        All Products
+                        product 1
                       </Link>
                       <Link
                         to="/products/product-1"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
-                        Product 1
+                        Product 2
                       </Link>
                       <Link
                         to="/products/product-2"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
-                        Product 2
+                        Product 3
                       </Link>
                     </div>
                   )}
