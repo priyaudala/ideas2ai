@@ -6,7 +6,8 @@ import Footer from "./components/Layout/Footer";
 import SubscribeSection from "./components/Home/SubscribeSection.jsx";
 
 import Home from "./pages/Home";
-import Services from "./pages/Services";
+import OurservicesPage from "./pages/Service/OurServicesPage.jsx";
+import ServiceDetailsPage from "./pages/Service/ServiceDetailsPage.jsx";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -21,7 +22,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/services" element={<Services />} />
+         <Route path="/services/ourservices" element={<OurservicesPage />} />
+         <Route path="/services/servicedetails" element={<ServiceDetailsPage />} />
           <Route path="/products" element={<Products />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
