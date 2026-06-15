@@ -27,14 +27,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
-         <Route path="/services/ourservices" element={<OurservicesPage />} />
-         <Route path="/services/servicedetails" element={<ServiceDetailsPage />} />
+          <Route path="/services/ourservices" element={<OurservicesPage />} />
+          <Route
+            path="/services/servicedetails"
+            element={<ServiceDetailsPage />}
+          />
           <Route path="/products/product1" element={<Product1Page />} />
           <Route path="/products/product2" element={<Product2Page />} />
           <Route path="/products/product3" element={<Product3Page />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog/grid" element={<BlogGridPage />} />
-          <Route path="/blog/details" element={<BlogDetailsPage />} />
+          <Route path="/blog/details/:id" element={<BlogDetailsPage />} />
           <Route path="/blog/sidebar" element={<BlogSidebarPage />} />
         </Routes>
         <SubscribeSection />

@@ -259,11 +259,10 @@ const Navbar = () => {
                       >
                         Blog Grid
                       </Link>
-
                       <Link
-                        to="/blog/details"
+                        to="/blog/details/1"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
-                        onClick={() => handleNavigation("/blog/details")}
+                        onClick={() => handleNavigation("/blog/details/1")}
                       >
                         Blog Details
                       </Link>
