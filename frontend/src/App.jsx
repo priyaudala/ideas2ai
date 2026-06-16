@@ -7,6 +7,7 @@ import SubscribeSection from "./components/Home/SubscribeSection.jsx";
 
 import Home from "./pages/Home";
 import OurservicesPage from "./pages/Service/OurServicesPage.jsx";
+import Pricing from "./pages/Pricing.jsx";
 import ServiceDetailsPage from "./pages/Service/ServiceDetailsPage.jsx";
 import Product1Page from "./pages/Product/Product1Page.jsx";
 import Product2Page from "./pages/Product/Product2Page.jsx";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services/ourservices" element={<OurservicesPage />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route
             path="/services/servicedetails"
             element={<ServiceDetailsPage />}

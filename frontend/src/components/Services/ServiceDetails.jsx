@@ -2,6 +2,7 @@ import React from "react";
 import seviceSingleImg1 from "../../assets/sevice-single-img1.jpg";
 import seviceSingleImg2 from "../../assets/sevice-single-img2.jpg";
 import seviceSingleImg3 from "../../assets/sevice-single-img3.jpg";
+import {useEffect} from 'react'
 
 import {
   Search,
@@ -10,6 +11,9 @@ import {
 } from "lucide-react";
 
 const ServiceDetails = () => {
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       {/* Hero Section */}
@@ -39,16 +43,16 @@ const ServiceDetails = () => {
       {/* Main Content */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[68%_32%] gap-12">
+          <div className="grid lg:grid-cols-[1fr_380px] gap-12">
             {/* Left Content */}
             <div>
               <img
                 src={seviceSingleImg1}
                 alt="Service"
-                className="w-full h-[550px] object-cover rounded-[30px]"
+                className="w-full h-[250px] sm:h-[320px] md:h-[420px] object-cover rounded-[20px] md:rounded-[30px]"
               />
 
-              <h2 className="text-[#06164a] text-4xl font-bold mt-8 mb-6 leading-tight">
+              <h2 className="text-[#06164a] text-2xl md:text-3xl font-bold mt-8 mb-6 leading-tight">
                 Using Personalized Technology to Encourage Innovation.
               </h2>
 
@@ -61,7 +65,7 @@ const ServiceDetails = () => {
                 development and IoT integration.
               </p>
 
-              <p className="text-gray-500 text-[18px] leading-8 mt-6">
+              <p className="text-gray-500 text-[18px] leading-8 mt-5">
                 Our team of professionals guarantees that every solution is
                 scalable, safe, and in line with your objectives, whether
                 you're wanting to modernize legacy systems, automate
@@ -69,7 +73,7 @@ const ServiceDetails = () => {
                 state-of-the-art technology.
               </p>
 
-              <p className="text-gray-500 text-[18px] leading-8 mt-6">
+              <p className="text-gray-500 text-[18px] leading-8 mt-4">
                 With a thorough understanding of your company, we provide
                 strong tools that not only address your problems but also
                 enable you to maintain your competitive edge in the ever
@@ -81,11 +85,11 @@ const ServiceDetails = () => {
 
               {/* Key Features */}
               <div className="mt-14">
-                <h2 className="text-[#06164a] text-[44px] font-bold leading-tight mb-6">
+                <h2 className="text-[#06164a] text-3xl font-bold mt-8 mb-6 leading-tight">
                   Key Features of AI Technology
                 </h2>
 
-                <p className="text-gray-500 text-[18px] leading-8 max-w-4xl">
+                <p className="text-gray-500 text-[18px] leading-8 mt-5">
                   Our specialty is developing custom technological
                   solutions that are suited to your company's particular
                   requirements. We offer cutting-edge solutions that
@@ -162,7 +166,7 @@ const ServiceDetails = () => {
        {/* Bottom Cards Section */}
 <div className="grid md:grid-cols-2 gap-8 mt-14">
   {/* Image Card 1 */}
-  <div className="overflow-hidden rounded-[30px] h-[260px]">
+  <div className="overflow-hidden rounded-[30px] h-[220px]">
     <img
       src={seviceSingleImg2}
       alt="AI"
@@ -171,7 +175,7 @@ const ServiceDetails = () => {
   </div>
 
   {/* Image Card 2 */}
-  <div className="overflow-hidden rounded-[30px] h-[260px]">
+  <div className="overflow-hidden rounded-[30px] h-[220px]">
     <img
       src={seviceSingleImg3}
       alt="AI"
@@ -179,54 +183,179 @@ const ServiceDetails = () => {
     />
   </div>
 </div>
+{/* Benefits Section */}
+<div className="mt-14">
+  <p className="text-gray-500 text-[18px] leading-8">
+    Our specialty is developing custom technological solutions that are
+    suited to your company's particular requirements. We offer cutting-edge
+    solutions that optimize workflows, boost efficiency, and spur expansion,
+    ranging from cloud computing and AI-powered tools to custom software
+    development and IoT integration.
+  </p>
+
+  <h2 className="text-[#06164a] text-3xl font-bold mt-12 mb-6 leading-tight">
+  Benefits of AI Technology
+</h2>
+
+<p className="text-gray-500 text-[18px] leading-8 mt-5">
+    Our specialty is developing custom technological solutions that are
+    suited to your company's particular requirements. We offer cutting-edge
+    solutions that optimize workflows, boost efficiency, and spur expansion,
+    ranging from cloud computing and AI-powered tools to custom software
+    development and IoT integration.
+  </p>
+
+  {/* Benefit Cards */}
+<div className="grid md:grid-cols-3 gap-6 mt-10">
+  
+  <div className="border border-gray-300 rounded-[20px] p-6">
+    <h3 className="text-[#06164a] text-xl font-bold mb-3">
+      Improved Accuracy
+    </h3>
+
+    <p className="text-gray-500 text-[16px] leading-7">
+      These companies provide services for a digital agency.
+    </p>
+  </div>
+
+  <div className="border border-gray-300 rounded-[20px] p-6">
+    <h3 className="text-[#06164a] text-xl font-bold mb-3">
+      Efficiency & Automation
+    </h3>
+
+    <p className="text-gray-500 text-[16px] leading-7">
+      These companies provide services for a digital agency.
+    </p>
+  </div>
+
+  <div className="border border-gray-300 rounded-[20px] p-6">
+    <h3 className="text-[#06164a] text-xl font-bold mb-3">
+      24/7 Online Support
+    </h3>
+
+    <p className="text-gray-500 text-[16px] leading-7">
+      We provide service for Digital Agency Online Support.
+    </p>
+  </div>
+
+</div>
+
+  {/* AI Technology Content */}
+  <h2 className="text-[#06164a] text-3xl font-bold mt-12 mb-6 leading-tight">
+    AI Technology
+  </h2>
+
+  <p className="text-gray-500 text-[18px] leading-8 mt-4">
+    Our specialty is developing custom technological solutions that are
+    suited to your company's particular requirements. We offer cutting-edge
+    solutions that optimize workflows, boost efficiency, and spur expansion,
+    ranging from cloud computing and AI-powered tools to custom software
+    development and IoT integration.
+  </p>
+</div>
               </div>
             </div>
+{/* Sidebar */}
+<div className="w-full">
 
-            {/* Sidebar */}
-            <div>
-              {/* Search */}
-              <div className="bg-[#f7f7f7] rounded-[30px] p-8 mb-10">
-                <div className="flex overflow-hidden rounded-full bg-white">
-                  <input
-                    type="text"
-                    placeholder="Enter Keyword"
-                    className="flex-1 px-6 py-5 outline-none text-gray-600"
-                  />
+  {/* Search */}
+  <div className="bg-[#f7f7f7] rounded-[20px] md:rounded-[30px] p-5 md:p-8 mb-8 md:mb-10">
+    <div className="flex overflow-hidden rounded-full bg-white">
+      <input
+        type="text"
+        placeholder="Enter Keyword"
+        className="flex-1 px-4 md:px-6 py-4 md:py-5 outline-none text-gray-600 text-sm md:text-base min-w-0"
+      />
 
-                  <button className="bg-[#013a3a] w-20 flex items-center justify-center text-white">
-                    <Search size={22} />
-                  </button>
-                </div>
-              </div>
+      <button className="bg-[#013a3a] w-14 md:w-20 flex items-center justify-center text-white flex-shrink-0">
+        <Search size={20} />
+      </button>
+    </div>
+  </div>
 
-              {/* Categories */}
-              <div className="bg-[#f7f7f7] rounded-[30px] p-8">
-                <h3 className="text-[#06164a] text-3xl font-bold mb-8">
-                  Category
-                </h3>
+  {/* Categories */}
+  <div className="bg-[#f7f7f7] rounded-[20px] md:rounded-[30px] p-5 md:p-8">
+    <h3 className="text-[#06164a] text-xl md:text-2xl font-bold mb-5 md:mb-6">
+      Category
+    </h3>
 
-                {[
-                  "City Guide",
-                  "Digital Nomad",
-                  "New Places",
-                  "Popular Hosts",
-                  "Room With A View",
-                  "Tips & Tricks",
-                ].map((item, index) => (
-                  <button
-                    key={index}
-                    className={`w-full flex items-center justify-between px-8 py-5 rounded-full border mb-5 transition-all ${
-                      item === "Digital Nomad"
-                        ? "bg-gradient-to-r from-purple-600 to-orange-500 text-white border-transparent"
-                        : "bg-white text-gray-600 border-gray-200 hover:border-[#06164a]"
-                    }`}
-                  >
-                    <span className="text-lg">{item}</span>
-                    <ArrowRight size={20} />
-                  </button>
-                ))}
-              </div>
-            </div>
+    {[
+      "City Guide",
+      "Digital Nomad",
+      "New Places",
+      "Popular Hosts",
+      "Room With A View",
+      "Tips & Tricks",
+    ].map((item, index) => (
+      <button
+        key={index}
+        className={`w-full flex items-center justify-between px-4 md:px-8 py-4 md:py-5 rounded-full border mb-4 md:mb-5 transition-all ${
+          item === "Digital Nomad"
+            ? "bg-gradient-to-r from-purple-600 to-orange-500 text-white border-transparent"
+            : "bg-white text-gray-600 border-gray-200 hover:border-[#06164a]"
+        }`}
+      >
+        <span className="text-sm md:text-base text-left">
+          {item}
+        </span>
+
+        <ArrowRight
+          size={18}
+          className="flex-shrink-0"
+        />
+      </button>
+    ))}
+  </div>
+
+  {/* AI Card */}
+  <div
+    className="
+      relative
+      overflow-hidden
+      rounded-[20px]
+      md:rounded-[30px]
+      h-[350px]
+      sm:h-[400px]
+      lg:h-[500px]
+      p-5
+      md:p-8
+      mt-8
+      md:mt-10
+      flex
+      flex-col
+      justify-end
+      bg-cover
+      bg-center
+    "
+    style={{
+      backgroundImage: "url('/bgimg.jpeg')",
+    }}
+  >
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-[#08001d]/55" />
+
+    {/* Content */}
+    <div className="relative z-10">
+      <h3 className="text-white text-2xl md:text-[28px] font-bold mb-3 md:mb-4">
+        Transform with AI
+      </h3>
+
+      <p className="text-white/90 text-sm md:text-[16px] leading-6 md:leading-7 mb-6 md:mb-8">
+        Our specialty is developing AI technological solutions that are
+        suited to your company's particular requirements. We offer
+        cutting-edge solutions that optimize workflows, boost efficiency,
+        and accelerate business growth.
+      </p>
+
+      <button className="flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#6D28D9] to-[#EC4899] text-white px-5 md:px-6 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg hover:scale-105 transition-all duration-300">
+        Get Started Now
+        <ArrowRight size={20} />
+      </button>
+    </div>
+  </div>
+
+</div>
+            
           </div>
         </div>
       </section>
