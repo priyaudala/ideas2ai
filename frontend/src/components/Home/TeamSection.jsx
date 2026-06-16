@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { FaPinterest,FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaPinterest,
+  FaLinkedin,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-import team1 from "../../assets/team-thumb1.avif";
-import team2 from "../../assets/team-thumb2.webp";
-import team3 from "../../assets/team-thumb3.webp";
+import team1 from "../../assets/team-img1.jpg";
+import team2 from "../../assets/team-img2.jpg";
+import team3 from "../../assets/team-img3.jpg";
 
 export default function TeamSection() {
   const teamData = [
@@ -37,7 +43,6 @@ export default function TeamSection() {
   return (
     <section className=" py-16 sm:py-20 md:py-24 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* HEADER */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +64,6 @@ export default function TeamSection() {
 
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 items-center">
-
           {/* LEFT LIST (Scrollable on mobile) */}
           <div className="flex lg:block gap-4 overflow-x-auto lg:overflow-visible pb-2">
             {teamData.map((item, index) => (
@@ -113,41 +117,47 @@ export default function TeamSection() {
             </AnimatePresence>
 
             {/* EXPERIENCE + SOCIAL */}
-            <div className="absolute 
+            <div
+              className="absolute 
                             bottom-[-20px] sm:bottom-[-30px] 
                             left-1/2 -translate-x-1/2 
-                            flex flex-col sm:flex-row items-center">
-
+                            flex flex-col sm:flex-row items-center"
+            >
               {/* EXPERIENCE */}
-              <div className="bg-[#081c3a] text-white 
+              <div
+                className="bg-[#081c3a] text-white 
                               px-4 sm:px-6 py-3 
                               rounded-t-[12px] sm:rounded-l-[14px] sm:rounded-tr-none 
-                              flex items-center gap-2 sm:gap-3 shadow-lg">
+                              flex items-center gap-2 sm:gap-3 shadow-lg"
+              >
                 <span className="text-lg sm:text-[22px] font-bold">10+</span>
-                <span className="text-xs sm:text-sm">
-                  Experience
-                </span>
+                <span className="text-xs sm:text-sm">Experience</span>
               </div>
 
               {/* SOCIAL */}
-              <div className="bg-white border border-gray-200 
+              <div
+                className="bg-white border border-gray-200 
                               px-3 sm:px-5 py-2 sm:py-3 
                               rounded-b-[20px] sm:rounded-r-[40px] sm:rounded-bl-none 
-                              flex items-center gap-3 sm:gap-4 shadow-sm">
-
-                {[FaLinkedin, FaFacebook, FaTwitter, FaPinterest, FaInstagram].map(
-                  (Icon, i) => (
-                    <motion.div
-                      key={i}
-                      whileHover={{ scale: 1.2 }}
-                      className="w-8 h-8 flex items-center justify-center 
+                              flex items-center gap-3 sm:gap-4 shadow-sm"
+              >
+                {[
+                  FaLinkedin,
+                  FaFacebook,
+                  FaTwitter,
+                  FaPinterest,
+                  FaInstagram,
+                ].map((Icon, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.2 }}
+                    className="w-8 h-8 flex items-center justify-center 
                                  rounded-full border hover:bg-red-500 
                                  group cursor-pointer transition"
-                    >
-                      <Icon className="text-[#0b1b3f] group-hover:text-white text-xs" />
-                    </motion.div>
-                  )
-                )}
+                  >
+                    <Icon className="text-[#0b1b3f] group-hover:text-white text-xs" />
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
@@ -171,8 +181,8 @@ export default function TeamSection() {
                 </p>
 
                 <p className="text-gray-500 mb-6 sm:mb-8 leading-relaxed text-sm max-w-[420px] mx-auto lg:mx-0">
-                  We value curiosity, collaboration and a can-do attitude.
-                  Come join a team that celebrates your unique skills.
+                  We value curiosity, collaboration and a can-do attitude. Come
+                  join a team that celebrates your unique skills.
                 </p>
 
                 {/* SKILLS */}
@@ -199,7 +209,6 @@ export default function TeamSection() {
               </motion.div>
             </AnimatePresence>
           </div>
-
         </div>
       </div>
     </section>

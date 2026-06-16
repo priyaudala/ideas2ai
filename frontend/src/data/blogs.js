@@ -16,8 +16,10 @@ export const blogs = [
       "Analytics tools help companies understand customer behavior.",
       "Future success depends on how effectively data is used.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Data is the new oil of the digital economy.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["Data", "Business", "Analytics"],
     commentsList: [],
   },
@@ -25,7 +27,7 @@ export const blogs = [
   {
     id: 2,
     title: "The Future of Work: Embracing Digital Transformation",
-    image: "/blog-img2.jpg",
+    image: "/blog-img2.webp",
     category: "Business",
     comments: 4,
     author: "Admin",
@@ -37,8 +39,10 @@ export const blogs = [
       "Digital tools improve collaboration and productivity.",
       "Companies must adapt to stay competitive.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Transformation is no longer optional, it's survival.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["Work", "Digital", "Business"],
     commentsList: [],
   },
@@ -58,8 +62,10 @@ export const blogs = [
       "Automation reduces manual workload.",
       "Businesses are investing heavily in AI solutions.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "AI is the engine of the next industrial revolution.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["AI", "Technology", "Future"],
     commentsList: [],
   },
@@ -79,6 +85,8 @@ export const blogs = [
       "AI Machine Learning (ML) is a core branch of Artificial Intelligence (AI) that enables computers and systems to automatically learn from data, identify patterns, and make decisions without being explicitly programmed. It allows machines to improve their performance over time by learning from experience, much like how humans learn through practice and feedback.Machine Learning has become a transformative technology across industries, empowering businesses to automate processes, predict outcomes, and solve complex problems with data-driven insights.",
       "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote:
       "AI solutions require ongoing monitoring to maintain accuracy and efficiency. We provide continuous support, updates, and performance enhancements to ensure your AI system remains effective as your business evolves.",
     gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
@@ -103,6 +111,8 @@ export const blogs = [
       "Designers are focusing on accessibility and mobile-first approaches.",
       "Micro-interactions are becoming key to user engagement.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Good design is invisible but unforgettable.",
     gallery: [
       "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800",
@@ -130,6 +140,8 @@ export const blogs = [
       "Frameworks like React dominate frontend development.",
       "Performance optimization is now a core requirement.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote:
       "Great websites are built with clean architecture and scalable thinking.",
     gallery: [
@@ -158,6 +170,8 @@ export const blogs = [
       "State management plays a key role in scalability.",
       "Code splitting improves performance significantly.",
     ],
+    additionalContent:
+      "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Scalable apps are built with simplicity and consistency.",
     gallery: [
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800",
@@ -184,8 +198,10 @@ export const blogs = [
       "SEO and social media are key growth drivers.",
       "Content marketing builds long-term trust.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Marketing is storytelling that drives action.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["Marketing", "Startup", "Growth"],
     commentsList: [],
   },
@@ -207,8 +223,10 @@ export const blogs = [
       "Teams rely on collaboration tools.",
       "Flexibility improves productivity.",
     ],
+    additionalContent:
+      "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Work is no longer a place, it's a mindset.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["Remote", "Work", "Business"],
     commentsList: [],
   },
@@ -231,8 +249,10 @@ export const blogs = [
       "Enable two-factor authentication.",
       "Avoid suspicious links.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Security is not optional in the digital world.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["Security", "Cyber", "Privacy"],
     commentsList: [],
   },
@@ -255,8 +275,10 @@ export const blogs = [
       "Serverless is growing fast.",
       "Hybrid cloud is widely adopted.",
     ],
+    additionalContent:
+      "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "The cloud is the backbone of modern systems.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["Cloud", "AWS", "Azure"],
     commentsList: [],
   },
@@ -279,8 +301,10 @@ export const blogs = [
       "Avoid multitasking.",
       "Break tasks into steps.",
     ],
+     additionalContent:
+    "Our team designs a tailor-made AI solution based on your specific requirements. We develop machine learning models, build algorithms, and create prototypes to ensure the solution aligns with your business objectives. We begin by understanding your business goals, challenges, and opportunities for AI integration. Our experts assess your current systems and identify areas where AI can bring the most impact.",
     quote: "Productivity is about doing less but better.",
-    gallery: [],
+    gallery: ["/blog-single-img2.jpg", "/blog-single-img3.jpg"],
     tags: ["Productivity", "Focus", "Life"],
     commentsList: [],
   },

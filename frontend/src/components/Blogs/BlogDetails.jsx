@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import gsap from "gsap";
@@ -61,6 +61,10 @@ const BlogDetails = () => {
     });
   }, [id]);
 
+  const categories = [...new Set(blogs.map((blog) => blog.category))];
+
+  const popularTags = [...new Set(blogs.flatMap((blog) => blog.tags))];
+  const [selectedCategory, setSelectedCategory] = useState("");
   return (
     <div className="bg-white overflow-hidden">
       {/* HERO SECTION */}
@@ -290,19 +294,6 @@ const BlogDetails = () => {
                 </span>
               </div>
             </div>
-            {/* Additional Content */}
-            <div className="detail-animation">
-              <p className="text-[18px] leading-10 text-slate-600 mb-10">
-                Our team designs tailor-made AI solutions based on your specific
-                requirements. We develop machine learning models, build
-                algorithms, and create prototypes to ensure the solution aligns
-                with your business objectives. We begin by understanding your
-                business goals, challenges, and opportunities for AI
-                integration. Our experts assess your current systems and
-                identify areas where AI can bring the most impact.
-              </p>
-            </div>
-
             {/* Gallery Images */}
             <div className="detail-animation grid md:grid-cols-2 gap-8 mb-10">
               {blog.gallery.map((image, index) => (
@@ -322,16 +313,9 @@ const BlogDetails = () => {
               ))}
             </div>
 
-            {/* More Paragraph */}
             <div className="detail-animation">
               <p className="text-[18px] leading-10 text-slate-600 mb-12">
-                Our team designs a tailor-made AI solution based on your
-                specific requirements. We develop machine learning models, build
-                algorithms, and create prototypes to ensure the solution aligns
-                with your business objectives. We begin by understanding your
-                business goals, challenges, and opportunities for AI
-                integration. Our experts assess your current systems and
-                identify areas where AI can bring the most impact.
+                {blog.additionalContent}
               </p>
             </div>
 
@@ -511,90 +495,63 @@ const BlogDetails = () => {
               </h3>
 
               <div className="space-y-4 sm:space-y-5">
-                {[
-                  "City Guide",
-                  "Digital Nomad",
-                  "New Places",
-                  "Popular Hosts",
-                  "Room With A View",
-                  "Tips & Tricks",
-                ].map((category, index) => (
+                {categories.map((category, index) => (
                   <button
                     key={index}
-                    className="
-                      w-full
-                      bg-white
-                      rounded-full
-                      px-6 sm:px-8
-                      py-4 sm:py-5 lg:py-6
-                      flex items-center justify-between
-                      text-slate-500
-                      text-sm sm:text-base
-                      hover:bg-violet-500
-                      hover:text-white
-                      transition-all
-                    "
+                    onClick={() => setSelectedCategory(category)}
+                    className={`
+        w-full
+        rounded-full
+        px-6 sm:px-8
+        py-4 sm:py-5 lg:py-6
+        flex items-center justify-between
+        text-sm sm:text-base
+        transition-all duration-300
+
+        ${
+          selectedCategory === category
+            ? "bg-gradient-to-r from-[#FF6633] to-[#6D2CF9] text-white shadow-lg scale-[1.02]"
+            : "bg-white text-slate-500 hover:bg-gradient-to-r hover:from-[#FF6633] hover:to-[#6D2CF9] hover:text-white"
+        }
+      `}
                   >
                     <span>{category}</span>
 
-                    <ArrowRight size={18} />
+                    <ArrowRight
+                      size={18}
+                      className={`transition-transform duration-300 ${
+                        selectedCategory === category ? "translate-x-1" : ""
+                      }`}
+                    />
                   </button>
                 ))}
               </div>
             </div>
-            {/* Recent Posts */}
-            <div className="detail-animation bg-slate-100 rounded-[20px] sm:rounded-[28px] lg:rounded-[32px] p-5 sm:p-6 lg:p-10">
-              <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold text-slate-900 mb-6 sm:mb-8 lg:mb-10">
+            {/* RECENT POSTS */}
+            <div className="bg-[#F5F7FA] p-8 rounded-[30px]">
+              <h3 className="text-2xl font-bold mb-6 text-[#081B4B]">
                 Recent Posts
               </h3>
 
-              <div className="space-y-5 sm:space-y-6 lg:space-y-8">
-                {recentPosts.map((post) => (
+              <div className="space-y-6">
+                {blogs.slice(0, 3).map((post) => (
                   <div
                     key={post.id}
-                    onClick={() => navigate(`/blog/${post.id}`)}
-                    className="
-          flex flex-col xs:flex-row sm:flex-row lg:flex-row
-          gap-4 sm:gap-5
-          cursor-pointer
-          group
-          p-3 sm:p-0
-          rounded-xl sm:rounded-none
-          hover:bg-white sm:hover:bg-transparent
-          transition-all
-        "
+                    onClick={() => navigate(`/blog/details/${post.id}`)}
+                    className="flex gap-4 cursor-pointer group"
                   >
-                    {/* Image */}
-                    <div className="w-full xs:w-28 sm:w-28 md:w-32 lg:w-32 flex-shrink-0">
-                      <img
-                        src={post.recentImage}
-                        alt={post.title}
-                        className="
-              w-full
-              h-40 xs:h-24 sm:h-28 md:h-32 lg:h-32
-              rounded-[16px] sm:rounded-[20px] lg:rounded-[24px]
-              object-cover
-            "
-                      />
-                    </div>
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-24 h-24 rounded-2xl object-cover"
+                    />
 
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 text-slate-500 mb-2 sm:mb-3 text-xs sm:text-sm">
-                        <CalendarDays size={16} className="shrink-0" />
-                        <span className="truncate">{post.date}</span>
-                      </div>
+                    <div>
+                      <p className="text-sm text-gray-500 mb-2">
+                        June 15, 2025
+                      </p>
 
-                      <h4
-                        className="
-              text-sm sm:text-base md:text-lg lg:text-xl
-              font-bold text-slate-900
-              group-hover:text-violet-500
-              transition-colors
-              leading-snug
-              line-clamp-2 sm:line-clamp-3
-            "
-                      >
+                      <h4 className="font-semibold text-[#081B4B] leading-6 group-hover:text-violet-600 transition">
                         {post.title}
                       </h4>
                     </div>
@@ -602,7 +559,6 @@ const BlogDetails = () => {
                 ))}
               </div>
             </div>
-
             {/* Popular Tags */}
             <div className="detail-animation bg-slate-100 rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 lg:p-10">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-8 sm:mb-10">
@@ -610,14 +566,7 @@ const BlogDetails = () => {
               </h3>
 
               <div className="flex flex-wrap gap-3 sm:gap-4">
-                {[
-                  "Automation",
-                  "Branding",
-                  "Digital",
-                  "Networks",
-                  "Supply",
-                  "Technology",
-                ].map((tag, index) => (
+                {popularTags.map((tag, index) => (
                   <button
                     key={index}
                     className="

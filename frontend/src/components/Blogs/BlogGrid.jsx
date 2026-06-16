@@ -11,12 +11,19 @@ const BlogGrid = () => {
 
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
   const blogsPerPage = 6;
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const displayedBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
-  const totalPages = Math.ceil(blogs.length / blogsPerPage);
+  const filteredBlogs = blogs.filter(
+    (blog) =>
+      blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      blog.description.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
+  const displayedBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
+  const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
 
   // Skeleton Loader
   useEffect(() => {
@@ -87,9 +94,21 @@ const BlogGrid = () => {
           </h2>
 
           <p className="mt-5 max-w-2xl mx-auto text-slate-500 leading-relaxed">
-            Stay updated with the latest trends, ideas, and stories from our
+            Stay updated with the latest trends, ideas and stories from our
             experts around the world.
           </p>
+          <div className="mt-8 flex justify-center">
+            <input
+              type="text"
+              placeholder="Search blogs..."
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setCurrentPage(1);
+              }}
+              className="w-full max-w-md px-5 py-3 border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+          </div>
         </div>
 
         {/* Loading Skeleton */}
@@ -193,7 +212,7 @@ const BlogGrid = () => {
               </span>{" "}
               of{" "}
               <span className="font-semibold text-slate-700">
-                {blogs.length}
+                {filteredBlogs.length}
               </span>{" "}
               blogs
             </div>
