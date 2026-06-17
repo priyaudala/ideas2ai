@@ -2,17 +2,59 @@ import React from "react";
 import seviceSingleImg1 from "../../assets/sevice-single-img1.jpg";
 import seviceSingleImg2 from "../../assets/sevice-single-img2.jpg";
 import seviceSingleImg3 from "../../assets/sevice-single-img3.jpg";
-import {useEffect} from 'react'
+
 
 import {
   Search,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const ServiceDetails = () => {
+    const leftContentRef = useRef(null);
+  const sidebarRef = useRef(null);
     useEffect(() => {
     window.scrollTo(0, 0);
+     gsap.fromTo(
+    leftContentRef.current,
+    {
+      x: -120,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: leftContentRef.current,
+        start: "top 80%",
+      },
+    }
+  );
+
+  gsap.fromTo(
+    sidebarRef.current,
+    {
+      x: 120,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sidebarRef.current,
+        start: "top 80%",
+      },
+    }
+  );
+
   }, []);
   return (
     <div>
@@ -45,7 +87,7 @@ const ServiceDetails = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[1fr_380px] gap-12">
             {/* Left Content */}
-            <div>
+             <div ref={leftContentRef}>
               <img
                 src={seviceSingleImg1}
                 alt="Service"
@@ -256,7 +298,7 @@ const ServiceDetails = () => {
               </div>
             </div>
 {/* Sidebar */}
-<div className="w-full">
+ <div ref={sidebarRef} className="w-full">
 
   {/* Search */}
   <div className="bg-[#f7f7f7] rounded-[20px] md:rounded-[30px] p-5 md:p-8 mb-8 md:mb-10">
@@ -288,23 +330,69 @@ const ServiceDetails = () => {
       "Tips & Tricks",
     ].map((item, index) => (
       <button
-        key={index}
-        className={`w-full flex items-center justify-between px-4 md:px-8 py-4 md:py-5 rounded-full border mb-4 md:mb-5 transition-all ${
-          item === "Digital Nomad"
-            ? "bg-gradient-to-r from-purple-600 to-orange-500 text-white border-transparent"
-            : "bg-white text-gray-600 border-gray-200 hover:border-[#06164a]"
-        }`}
-      >
-        <span className="text-sm md:text-base text-left">
-          {item}
-        </span>
+  key={index}
+    className="
+      group
+      w-full
+      flex
+      items-center
+      justify-between
+      px-4 md:px-8
+      py-4 md:py-5
+      rounded-full
+      border
+      mb-4 md:mb-5
+      bg-white
+      text-gray-600
+      border-gray-200
+      hover:bg-gradient-to-r
+      hover:from-purple-600
+      hover:to-orange-500
+      hover:text-white
+      hover:border-transparent
+      transition-all
+      duration-300
+    "
+  >
+    <span className="text-sm md:text-base font-medium">
+      {item}
+    </span>
 
-        <ArrowRight
-          size={18}
-          className="flex-shrink-0"
-        />
-      </button>
-    ))}
+    <div className="relative w-5 h-5 overflow-hidden">
+
+      {/* Current Arrow */}
+      <ArrowRight
+        size={18}
+        className="
+          absolute
+          top-0
+          left-0
+          transition-all
+          duration-300
+          group-hover:translate-x-5
+          group-hover:-translate-y-5
+        "
+      />
+
+      {/* Hover Arrow */}
+      <ArrowRight
+        size={18}
+        className="
+          absolute
+          top-0
+          left-0
+          -translate-x-5
+          translate-y-5
+          transition-all
+          duration-300
+          group-hover:translate-x-0
+          group-hover:translate-y-0
+        "
+      />
+
+    </div>
+  </button>
+))}
   </div>
 
   {/* AI Card */}

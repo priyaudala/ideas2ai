@@ -15,6 +15,11 @@ import client2 from "../../assets/client2.jpg";
 import client3 from "../../assets/client3.jpg";
 import { Link, useNavigate  } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 
 const services = [
@@ -52,7 +57,137 @@ const services = [
 
 const OurServices = () => {
   const navigate = useNavigate();
+   // ✅ heading ref
+  const headingRef = useRef(null);
 
+  // ✅ cards ref (IMPORTANT FIX)
+  const cardsRef = useRef([]);
+cardsRef.current = cardsRef.current.slice(0, services.length);// reset every render
+const featureSmallHeadingRef = useRef(null);
+const featureImg1Ref = useRef(null);
+const featureImg2Ref = useRef(null);
+const featureTextRef = useRef(null);
+const featureCardsRef = useRef([]);
+const featureHeadingRef = useRef(null);
+const pricingHeadingRef = useRef(null);
+const pricingCardsRef = useRef([]);
+pricingCardsRef.current = pricingCardsRef.current.slice(0, 3);
+  useEffect(() => {
+  // heading animation
+  gsap.fromTo(
+    headingRef.current,
+    { opacity: 0, y: -40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+    }
+  );
+
+  // cards animation
+  gsap.fromTo(
+    cardsRef.current,
+    { opacity: 0, y: 80, scale: 0.9 },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      stagger: 0.15,
+      ease: "power3.out",
+      delay: 0.2,
+    }
+  );
+
+  // ✅ FEATURE SECTION SCROLL ANIMATION
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: featureTextRef.current,
+      start: "top 80%",   // when section enters viewport
+      toggleActions: "play none none none",
+    },
+  });
+
+  tl.fromTo(
+    featureImg1Ref.current,
+    { x: -120, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.8 }
+  )
+    .fromTo(
+      featureImg2Ref.current,
+      { x: -120, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.8 },
+      "-=0.4"
+    )
+    .fromTo(
+      featureTextRef.current,
+      { x: 120, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.8 },
+      "-=0.6"
+    );
+    gsap.fromTo(
+  featureHeadingRef.current,
+  { opacity: 0, y: 50 },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: featureHeadingRef.current,
+      start: "top 80%",
+    },
+  }
+);
+// ✅ PRICING SECTION ANIMATION
+gsap.fromTo(
+  pricingHeadingRef.current,
+  { opacity: 0, y: 50 },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: pricingHeadingRef.current,
+      start: "top 85%",
+    },
+  }
+);
+
+// cards animation
+gsap.fromTo(
+  pricingCardsRef.current,
+  { opacity: 0, y: 80, scale: 0.9 },
+  {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.7,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: pricingCardsRef.current,
+      start: "top 85%",
+    },
+  }
+);
+gsap.fromTo(
+  featureSmallHeadingRef.current,
+  { opacity: 0, y: 20 },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: featureSmallHeadingRef.current,
+      start: "top 85%",
+    },
+  }
+);
+}, []);
   return (
     <div>
       {/* Hero Section */}
@@ -78,78 +213,106 @@ const OurServices = () => {
           </div>
         </div>
       </section>
+{/*services section */}
+ <section className="py-20 bg-[#f8f8f8]">
+  <div className="max-w-7xl mx-auto px-6">
 
-      {/* Services Section */}
-      <section className="py-20 bg-[#f8f8f8]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <p className="text-red-500 font-semibold uppercase tracking-wider mb-4">
-              ● OUR BEST SERVICES
-            </p>
+    {/* Heading (ANIMATED) */}
+    <div ref={headingRef} className="text-center mb-14">
+      <p className="text-red-500 font-semibold uppercase tracking-wider mb-4">
+        ● OUR BEST SERVICES
+      </p>
 
-            <h2 className="text-[#06164a] text-4xl md:text-5xl font-bold leading-tight">
-              Best Innovative Solution for
-              <br />
-              Businesses
-            </h2>
-          </div>
+      <h2 className="text-[#06164a] text-4xl md:text-5xl font-bold leading-tight">
+        Best Innovative Solution for
+        <br />
+        Businesses
+      </h2>
+    </div>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="bg-white rounded-[30px] p-8 min-h-[380px] relative overflow-hidden hover:shadow-xl transition-all duration-300"
-              >
-                {/* Shape */}
-                <div className="absolute top-0 right-0 opacity-15 pointer-events-none">
-                  <img
-                    src={serviceShape}
-                    alt="shape"
-                    className="w-44"
-                  />
-                </div>
+   {/* Grid */}
+<div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
 
-                {/* Number */}
-                <h3 className="text-[#06164a] text-2xl font-bold mb-10 relative z-10">
-                  {service.id}
-                </h3>
+  {services.map((service, index) => (
+    <div
+      key={service.id}
+      ref={(el) => {
+        if (el) cardsRef.current[index] = el;
+      }}
+      className="relative rounded-[30px] min-h-[380px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500"
+    >
 
-                {/* Icon */}
-                <div className="w-14 h-14 mb-8 relative z-10">
-                  <img
-                    src={service.icon}
-                    alt={service.title}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center scale-110 group-hover:scale-100 transition-transform duration-700"
+        style={{
+          backgroundImage: "url('/service-bg.jpg')",
+        }}
+      />
 
-                {/* Title */}
-                <h4 className="text-[#06164a] text-[24px] md:text-[28px] font-bold leading-tight mb-6 relative z-10">
-                  {service.title}
-                </h4>
+      {/* DARK + LIGHT BALANCED OVERLAY */}
+      <div className="absolute inset-0 bg-white/85"></div>
 
-                {/* Description */}
-                <p className="text-gray-500 text-base leading-8 mb-8 relative z-10">
-                  Specialize in delivering AI-powered solution revolutionize
-                  the way businesses operate. By leveraging the latest.
-                </p>
+     {/* Content */}
+<div className="relative z-10 p-8 group">
 
-                {/* Read More */}
+  {/* Shape */}
+  <div className="absolute top-0 right-0 opacity-20">
+    <img
+      src={serviceShape}
+      alt="shape"
+      className="w-52 drop-shadow-lg"
+    />
+  </div>
 
-                <Link
-                  to="/services/servicedetails"
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="text-[#06164a] font-bold text-lg flex items-center gap-2 hover:text-red-500 transition relative z-10"
-                >
-                  Read More
-                  <span>↗</span>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
+  {/* Number */}
+  <h3 className="text-[#06164a] text-2xl font-bold mb-10">
+    {service.id}
+  </h3>
 
-      </section>
+  {/* Icon */}
+  <div className="w-14 h-14 mb-8 transition-colors duration-300 group-hover:brightness-0 group-hover:invert-0">
+    <img
+      src={service.icon}
+      alt={service.title}
+      className="w-full h-full object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+    />
+  </div>
+
+  {/* Title */}
+  <h4 className="text-[#06164a] text-[24px] font-bold mb-4 transition-colors duration-300 group-hover:text-red-500">
+    {service.title}
+  </h4>
+
+  {/* Description */}
+  <p className="text-gray-500 text-base leading-7 mb-8">
+    AI-powered solutions for modern business transformation with high performance.
+  </p>
+
+  {/* Read More */}
+  <Link
+    to="/services/servicedetails"
+    className="
+      text-[#06164a]
+      font-semibold
+      flex
+      items-center
+      gap-2
+      transition-all
+      duration-300
+      group-hover:text-red-500
+      group-hover:gap-3
+    "
+  >
+    Read More <span>↗</span>
+  </Link>
+
+</div>
+    </div>
+  ))}
+</div>
+  </div>
+</section>
       {/* Feature Section */}
       <section className="py-20 lg:py-24 bg-[#f8f8f8] overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 md:px-6">
@@ -159,8 +322,9 @@ const OurServices = () => {
             {/* IMAGE 1 */}
             <div className="flex justify-center lg:justify-start">
               <img
-                src={featureImg1}
-                alt="Feature"
+  ref={featureImg1Ref}
+  src={featureImg1}
+  alt="Feature"
                 className="
             w-full
             max-w-[320px]
@@ -175,27 +339,22 @@ const OurServices = () => {
             <div>
 
               {/* Small Heading */}
-              <p className="text-[#e63946] uppercase tracking-[4px] font-semibold text-sm mb-3">
-                ● OUR FEATURE
-              </p>
+              <p
+  ref={featureSmallHeadingRef}
+  className="text-[#e63946] uppercase tracking-[4px] font-semibold text-sm mb-3"
+>
+  ● OUR FEATURE
+</p>
 
               {/* Main Heading */}
-              <h2
-                className="
-            text-[#06164a]
-            text-[28px]
-            md:text-[32px]
-            lg:text-[38px]
-            font-bold
-            leading-[1.35]
-            mb-8
-            max-w-[700px]
-          "
-              >
-                The Smarter Choice For AI-Powered
-                <br />
-                Creativity and Visual Excellence
-              </h2>
+             <h2
+  ref={featureHeadingRef}
+  className="text-[#06164a] text-[28px] md:text-[32px] lg:text-[38px] font-bold leading-[1.35] mb-8 max-w-[700px]"
+>
+  The Smarter Choice For AI-Powered
+  <br />
+  Creativity and Visual Excellence
+</h2>
 
               {/* IMAGE 2 + CONTENT */}
               <div className="flex flex-col lg:flex-row items-start gap-5 lg:gap-6">
@@ -204,8 +363,9 @@ const OurServices = () => {
                 <div className="relative shrink-0 mx-auto lg:mx-0">
 
                   <img
-                    src={featureImg2}
-                    alt="AI Feature"
+  ref={featureImg2Ref}
+  src={featureImg2}
+  alt="Feature"
                     className="
         w-[260px]
         md:w-[280px]
@@ -309,7 +469,7 @@ const OurServices = () => {
 </div>
 
                 {/* CONTENT */}
-                <div className="flex-1">
+                <div ref={featureTextRef}>
 
                   <div className="mb-8">
                     <h3 className="text-[22px] md:text-[24px] font-bold text-[#06164a] mb-3">
@@ -376,7 +536,7 @@ const OurServices = () => {
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Heading */}
-          <div className="text-center mb-16">
+          <div ref={pricingHeadingRef} className="text-center mb-16">
 
             <p className="text-[#e63946] uppercase font-semibold tracking-widest text-base mb-4">
               ● POPULAR PACKAGE
@@ -394,7 +554,12 @@ const OurServices = () => {
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
 
             {/* Standard */}
-            <div className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden">
+            <div
+  ref={(el) => {
+    if (el) pricingCardsRef.current[0] = el;
+  }}
+  className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden"
+>
 
               <img
                 src={pircingLogo}
@@ -487,7 +652,12 @@ const OurServices = () => {
             </div>
 
             {/* Professional */}
-            <div className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden">
+           <div
+  ref={(el) => {
+    if (el) pricingCardsRef.current[1] = el;
+  }}
+  className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden"
+>
 
               <div className="absolute top-8 right-8 bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
                 Popular
@@ -583,7 +753,12 @@ const OurServices = () => {
             </div>
 
             {/* Business */}
-            <div className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden">
+            <div
+  ref={(el) => {
+    if (el) pricingCardsRef.current[2] = el;
+  }}
+  className="bg-white border border-[#dfe3e8] rounded-[35px] p-8 relative overflow-hidden"
+>
 
               <img
                 src={pircingLogo}
