@@ -215,9 +215,7 @@ const Product1 = () => {
             </div>
           </div>
           {/* ================= WHAT MEDI2AI DOES ================= */}
-
-          {/* ================= WHAT MEDI2AI DOES ================= */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-24 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20 lg:mt-24 overflow-hidden">
             {/* Heading */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -225,24 +223,25 @@ const Product1 = () => {
               viewport={{ once: true }}
               className="max-w-4xl"
             >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-16 h-[4px] rounded-full bg-[#081b4b]" />
-                <span className="uppercase tracking-[5px] text-gray-500 text-sm">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5 flex-wrap">
+                <div className="w-12 sm:w-16 h-[3px] sm:h-[4px] rounded-full bg-[#081b4b]" />
+
+                <span className="uppercase tracking-[4px] sm:tracking-[5px] text-gray-500 text-xs sm:text-sm">
                   AI Capabilities
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081b4b]">
+              <h2 className="text-3xl sm:text-4xl md:text-[42px] lg:text-5xl font-bold text-[#081b4b]">
                 What Medi2AI Does
               </h2>
 
-              <p className="text-gray-500 text-base sm:text-lg mt-6 leading-8 max-w-3xl">
+              <p className="text-gray-500 text-sm sm:text-base lg:text-lg mt-4 sm:mt-6 leading-7 sm:leading-8 max-w-3xl">
                 Bridging the gap between data overload and clinical clarity.
               </p>
             </motion.div>
 
             {/* Timeline */}
-            <div className="relative mt-14 lg:mt-16">
+            <div className="relative mt-10 sm:mt-14 lg:mt-16">
               {/* Center Line */}
               <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-purple-200 via-[#081b4b] to-purple-200" />
 
@@ -272,78 +271,67 @@ const Product1 = () => {
                   desc: "Hands-free interaction with patient records and notes.",
                 },
               ].map((item, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{
-                    opacity: 0,
-                    x: i % 2 === 0 ? -60 : 60,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.7,
-                    delay: i * 0.08,
-                  }}
                   className={`relative flex ${
                     i % 2 === 0 ? "lg:justify-start" : "lg:justify-end"
-                  } mb-5 lg:mb-6`}
+                  } mb-4 sm:mb-5 lg:mb-6`}
                 >
                   {/* Circle */}
-                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white border-[3px] border-purple-600 shadow-md items-center justify-center z-20">
-                    <CheckCircle size={18} className="text-purple-600" />
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 xl:w-12 xl:h-12 rounded-full bg-white border-[3px] border-purple-600 shadow-md items-center justify-center z-20">
+                    <CheckCircle size={16} className="text-purple-600" />
                   </div>
 
                   {/* Card */}
-                  <motion.div
-                    whileHover={{
-                      y: -6,
-                      rotate: i % 2 === 0 ? -1 : 1,
-                    }}
-                    transition={{ duration: 0.3 }}
+                  <div
                     className="
           group
           relative
           overflow-hidden
           w-full
           lg:w-[47%]
+          xl:w-[45%]
           bg-white
-          rounded-[30px]
+          rounded-[24px]
+          sm:rounded-[30px]
           border border-gray-100
           shadow-[0_10px_35px_rgba(0,0,0,.06)]
-          p-6 lg:p-7
-          "
+          p-5
+          sm:p-6
+          lg:p-7
+          transition-all
+          duration-300
+          hover:-translate-y-1.5
+          hover:shadow-[0_20px_60px_rgba(0,0,0,.1)]
+        "
                   >
-                    {/* Hover Glow */}
-                    <div className="absolute -right-14 -bottom-14 w-36 h-36 rounded-full bg-purple-100 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700" />
+                    {/* Glow */}
+                    <div className="absolute -right-14 -bottom-14 w-36 h-36 rounded-full bg-purple-100 blur-3xl opacity-0 group-hover:opacity-100 transition duration-500" />
 
                     {/* Number */}
-                    <div className="absolute right-5 top-3 text-[60px] font-bold text-[#081b4b]/5">
+                    <div className="absolute right-4 sm:right-5 top-3 text-[45px] sm:text-[55px] lg:text-[60px] font-bold text-[#081b4b]/5 select-none">
                       0{i + 1}
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl lg:text-2xl font-bold text-[#081b4b] relative z-10">
+                    <h3 className="relative z-10 text-lg sm:text-xl lg:text-2xl font-bold text-[#081b4b] pr-10">
                       {item.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-500 leading-7 mt-3 relative z-10">
+                    <p className="relative z-10 mt-3 text-gray-500 text-sm sm:text-base leading-6 sm:leading-7">
                       {item.desc}
                     </p>
 
                     {/* Bottom Line */}
-                    <div className="mt-5 h-[3px] w-16 rounded-full bg-purple-600 group-hover:w-32 transition-all duration-500" />
-                  </motion.div>
-                </motion.div>
+                    <div className="mt-5 h-[3px] w-14 sm:w-16 rounded-full bg-purple-600 transition-all duration-500 group-hover:w-24 sm:group-hover:w-28" />
+                  </div>
+                </div>
               ))}
             </div>
           </div>
-
           {/* ================= KEY HIGHLIGHTS ================= */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-24 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20 lg:mt-24 overflow-hidden">
             {/* Heading */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -351,14 +339,14 @@ const Product1 = () => {
               viewport={{ once: true }}
               className="max-w-4xl"
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6 flex-wrap">
                 <motion.div
                   animate={{ width: [40, 70, 40] }}
                   transition={{ repeat: Infinity, duration: 3 }}
-                  className="h-[4px] rounded-full bg-[#081b4b]"
+                  className="h-[3px] sm:h-[4px] rounded-full bg-[#081b4b]"
                 />
 
-                <span className="uppercase tracking-[5px] text-gray-500 text-sm">
+                <span className="uppercase tracking-[4px] sm:tracking-[5px] text-gray-500 text-xs sm:text-sm">
                   Advanced Capabilities
                 </span>
               </div>
@@ -367,113 +355,110 @@ const Product1 = () => {
                 Key Highlights
               </h2>
 
-              <p className="mt-6 text-base sm:text-lg text-gray-500 leading-8 max-w-4xl">
+              <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-500 leading-7 sm:leading-8 max-w-4xl">
                 Advanced AI capabilities designed to improve clinical efficiency
                 and healthcare outcomes.
               </p>
             </motion.div>
 
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-16">
+            {/* Features */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-5 sm:gap-6 mt-10 sm:mt-14 lg:mt-16">
               {[
                 {
                   title: "AI-powered Clinical Decision Support",
                   number: "01",
+                  span: "xl:col-span-7",
                 },
                 {
                   title: "Automated Patient Record Summaries",
                   number: "02",
+                  span: "xl:col-span-5",
                 },
                 {
                   title: "Time-Saving Documentation Tools",
                   number: "03",
+                  span: "xl:col-span-4",
                 },
                 {
                   title: "Predictive Healthcare Analytics",
                   number: "04",
+                  span: "xl:col-span-8",
                 },
                 {
                   title: "Seamless EHR / EMR Integration",
                   number: "05",
+                  span: "xl:col-span-6",
                 },
                 {
                   title: "Data Security & HIPAA Compliance",
                   number: "06",
+                  span: "xl:col-span-6",
                 },
               ].map((item, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{
-                    opacity: 0,
-                    y: 50,
-                    rotateX: 20,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    rotateX: 0,
-                  }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.7,
-                    delay: index * 0.08,
-                  }}
-                  whileHover={{
-                    rotate: index % 2 === 0 ? 1 : -1,
-                  }}
-                  className="group relative overflow-hidden rounded-[35px] bg-white border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,.05)] p-8"
+                  className={`
+        group
+        relative
+        overflow-hidden
+        rounded-[28px] sm:rounded-[32px] lg:rounded-[36px]
+        border border-gray-100
+        bg-white
+        shadow-[0_10px_40px_rgba(0,0,0,.05)]
+        p-6 sm:p-8 lg:p-10
+        transition-all duration-500
+        hover:-translate-y-2
+        hover:shadow-[0_25px_80px_rgba(8,27,75,.12)]
+        ${item.span}
+      `}
                 >
                   {/* Glow */}
-                  <div className="absolute -right-16 -bottom-16 w-40 h-40 rounded-full bg-blue-100 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700" />
+                  <div className="absolute -right-20 -top-20 w-40 sm:w-48 h-40 sm:h-48 bg-blue-100 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition duration-700" />
 
-                  {/* Large Number */}
-                  <div className="absolute right-6 top-4 text-[80px] font-bold text-[#081b4b]/5 select-none">
+                  {/* Number */}
+                  <div className="absolute right-5 sm:right-7 top-4 sm:top-5 text-[55px] sm:text-[70px] lg:text-[80px] font-bold text-[#081b4b]/5 select-none">
                     {item.number}
                   </div>
 
-                  {/* Icon Container */}
-                  <motion.div
-                    animate={{
-                      rotate: [0, 8, -8, 0],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 5 + index,
-                    }}
-                    className="w-14 h-14 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center shadow-lg"
-                  >
-                    <CheckCircle size={22} className="text-white" />
-                  </motion.div>
+                  {/* Badge */}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center shadow-lg">
+                    <CheckCircle
+                      size={20}
+                      className="text-white sm:w-[22px] sm:h-[22px]"
+                    />
+                  </div>
 
                   {/* Title */}
-                  <h3 className="mt-8 text-xl lg:text-2xl font-bold text-[#081b4b] leading-9">
+                  <h3 className="mt-6 sm:mt-8 text-xl sm:text-2xl lg:text-3xl font-bold text-[#081b4b] leading-tight max-w-md">
                     {item.title}
                   </h3>
 
                   {/* Bottom */}
-                  <div className="mt-10 flex items-center justify-between">
-                    <div className="h-[3px] w-14 rounded-full bg-[#081b4b] group-hover:w-32 transition-all duration-500" />
+                  <div className="mt-8 sm:mt-10 flex items-center justify-between">
+                    <div className="h-[3px] w-14 sm:w-16 rounded-full bg-[#081b4b] group-hover:w-24 sm:group-hover:w-28 transition-all duration-500" />
 
-                    <motion.div
-                      animate={{
-                        x: [0, 6, 0],
-                      }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 2,
-                      }}
-                      className="text-[#081b4b] text-2xl"
+                    <div
+                      className="
+            w-10 h-10 sm:w-12 sm:h-12
+            rounded-full
+            bg-gray-50
+            flex items-center justify-center
+            text-[#081b4b]
+            text-lg sm:text-xl
+            group-hover:bg-[#081b4b]
+            group-hover:text-white
+            transition-all duration-300
+          "
                     >
                       →
-                    </motion.div>
+                    </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-
           {/* ================= WHO BENEFITS ================= */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-28 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20 lg:mt-28 overflow-hidden">
             {/* Heading */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -481,9 +466,10 @@ const Product1 = () => {
               viewport={{ once: true }}
               className="max-w-3xl"
             >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-14 h-[4px] rounded-full bg-[#081b4b]" />
-                <span className="text-sm uppercase tracking-[4px] text-gray-500">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5 flex-wrap">
+                <div className="w-10 sm:w-14 h-[3px] sm:h-[4px] rounded-full bg-[#081b4b]" />
+
+                <span className="text-xs sm:text-sm uppercase tracking-[3px] sm:tracking-[4px] text-gray-500">
                   Designed For Everyone
                 </span>
               </div>
@@ -492,38 +478,43 @@ const Product1 = () => {
                 Who Benefits From Medi2AI?
               </h2>
 
-              <p className="mt-6 text-base sm:text-lg text-gray-500 leading-8 max-w-2xl">
+              <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-500 leading-7 sm:leading-8 max-w-2xl">
                 Designed for clinicians, hospitals and healthcare organizations.
               </p>
             </motion.div>
 
             {/* Bento Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mt-10 sm:mt-14 lg:mt-16">
               {/* Large Card */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
-                className="lg:col-span-2 lg:row-span-2 relative overflow-hidden rounded-[35px] bg-[#081b4b] p-10 text-white"
+                className="lg:col-span-2 lg:row-span-2 relative overflow-hidden rounded-[28px] sm:rounded-[35px] bg-[#081b4b] p-7 sm:p-8 lg:p-10 text-white"
               >
                 {/* Glow */}
-                <div className="absolute -right-20 -bottom-20 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
+                <div className="absolute -right-20 -bottom-20 w-60 sm:w-72 h-60 sm:h-72 bg-white/10 rounded-full blur-3xl" />
 
                 <div className="relative z-10">
-                  <div className="text-5xl mb-8">👨‍⚕️</div>
+                  <div className="text-4xl sm:text-5xl mb-6 sm:mb-8">👨‍⚕️</div>
 
-                  <h3 className="text-3xl lg:text-4xl font-bold">Doctors</h3>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+                    Doctors
+                  </h3>
 
-                  <p className="mt-6 text-white/80 leading-8 text-lg max-w-md">
+                  <p className="mt-4 sm:mt-6 text-white/80 leading-7 sm:leading-8 text-base lg:text-lg max-w-md">
                     Faster access to patient insights and reduced administrative
                     burden with AI-assisted workflows.
                   </p>
 
                   <motion.div
                     animate={{ x: [0, 8, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="mt-10 text-3xl"
+                    transition={{
+                      repeat: Infinity,
+                      duration: 2,
+                    }}
+                    className="mt-8 sm:mt-10 text-2xl sm:text-3xl"
                   >
                     →
                   </motion.div>
@@ -557,13 +548,14 @@ const Product1 = () => {
                     y: -8,
                     scale: 1.02,
                   }}
-                  className="group relative overflow-hidden rounded-[35px] bg-gray-50 p-8 shadow-sm"
+                  className="group relative overflow-hidden rounded-[28px] sm:rounded-[35px] bg-gray-50 p-6 sm:p-8 shadow-sm"
                 >
-                  {/* Background Number */}
-                  <div className="absolute right-5 top-2 text-[80px] font-bold text-[#081b4b]/5">
+                  {/* Number */}
+                  <div className="absolute right-4 sm:right-5 top-2 text-[60px] sm:text-[80px] font-bold text-[#081b4b]/5 select-none">
                     0{index + 2}
                   </div>
 
+                  {/* Floating Icon */}
                   <motion.div
                     animate={{
                       y: [0, -5, 0],
@@ -572,180 +564,74 @@ const Product1 = () => {
                       repeat: Infinity,
                       duration: 3 + index,
                     }}
-                    className="text-4xl mb-7"
+                    className="text-3xl sm:text-4xl mb-5 sm:mb-7"
                   >
                     {item.icon}
                   </motion.div>
 
-                  <h3 className="text-2xl font-bold text-[#081b4b] leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#081b4b] leading-tight">
                     {item.title}
                   </h3>
 
-                  <p className="text-gray-500 leading-8 mt-5">{item.desc}</p>
+                  <p className="text-gray-500 leading-7 sm:leading-8 mt-4 sm:mt-5 text-sm sm:text-base">
+                    {item.desc}
+                  </p>
 
-                  {/* Animated line */}
-                  <div className="mt-7 h-[3px] w-14 rounded-full bg-[#081b4b] group-hover:w-full transition-all duration-500" />
+                  {/* Animated Line */}
+                  <div className="mt-6 sm:mt-7 h-[3px] w-14 rounded-full bg-[#081b4b] group-hover:w-full transition-all duration-500" />
                 </motion.div>
               ))}
             </div>
           </div>
-          {/* ================= FUTURE OF HEALTHCARE AI ================= */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-28">
-            <div className="relative overflow-hidden rounded-[35px] lg:rounded-[50px] min-h-[700px] lg:min-h-[850px]">
-              {/* Background Video */}
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src="/videos/doctor-ai.mp4" type="video/mp4" />
-              </video>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#081b4b]/95 via-[#081b4b]/75 to-[#081b4b]/80" />
-
-              {/* Glow */}
-              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-400/20 rounded-full blur-[120px]" />
-
-              {/* Content */}
-              <div className="relative z-20 h-full flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-20">
-                {/* Badge */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-3 w-fit mb-8"
-                >
-                  <span className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></span>
-
-                  <span className="text-white font-medium tracking-wide">
-                    NEXT GENERATION HEALTHCARE
-                  </span>
-                </motion.div>
-
-                {/* Heading */}
-                <motion.h2
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight max-w-4xl"
-                >
-                  The Future of
-                  <br />
-                  Healthcare AI
-                </motion.h2>
-
-                {/* Description */}
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="text-gray-300 text-lg leading-8 max-w-2xl mt-8"
-                >
-                  Witness how Medi2AI transforms diagnostics and patient care
-                  through intelligent AI-powered solutions and real-time
-                  clinical insights.
-                </motion.p>
-
-                {/* Feature Pills */}
-                <div className="flex flex-wrap gap-4 mt-10">
-                  {[
-                    "Mobile First",
-                    "Voice AI",
-                    "Smart Diagnostics",
-                    "Real-time Insights",
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      whileHover={{
-                        y: -5,
-                        scale: 1.03,
-                      }}
-                      className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-6 py-4 text-white font-medium"
-                    >
-                      {item}
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Bottom Glass Cards */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-16">
-                  {[
-                    {
-                      icon: "🧠",
-                      title: "Smart Diagnostics",
-                    },
-                    {
-                      icon: "🎙️",
-                      title: "Voice AI",
-                    },
-                    {
-                      icon: "⚡",
-                      title: "Instant Insights",
-                    },
-                    {
-                      icon: "📱",
-                      title: "Mobile First",
-                    },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 40 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      whileHover={{
-                        y: -8,
-                        backgroundColor: "rgba(255,255,255,0.15)",
-                      }}
-                      className="group relative bg-white/10 border border-white/20 backdrop-blur-2xl rounded-[30px] p-6 overflow-hidden"
-                    >
-                      <motion.div
-                        animate={{
-                          y: [0, -5, 0],
-                        }}
-                        transition={{
-                          repeat: Infinity,
-                          duration: 3 + i,
-                        }}
-                        className="text-4xl"
-                      >
-                        {item.icon}
-                      </motion.div>
-
-                      <h3 className="text-white font-bold text-xl mt-5">
-                        {item.title}
-                      </h3>
-
-                      <div className="absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full bg-white transition-all duration-500"></div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
           {/* ================= WHY CHOOSE MEDI2AI ================= */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-28 overflow-hidden">
+            {/* Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl"
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 sm:w-14 h-[4px] rounded-full bg-[#081b4b]" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-28">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081b4b]">
-              Why Choose Medi2AI?
-            </h2>
+                <span className="uppercase tracking-[4px] text-xs sm:text-sm text-gray-500">
+                  Trusted AI Platform
+                </span>
+              </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-14">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081b4b] leading-tight">
+                Why Choose Medi2AI?
+              </h2>
+
+              <p className="mt-5 text-base sm:text-lg text-gray-500 leading-8 max-w-2xl">
+                Built for clinicians and healthcare organizations with speed,
+                reliability, and intelligent decision support.
+              </p>
+            </motion.div>
+
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-7 mt-14">
               {[
                 {
+                  icon: "🛡️",
                   title: "Trusted AI Partner",
                   desc: "Designed for doctors and healthcare professionals with a focus on reliability and trust.",
                 },
                 {
+                  icon: "⚡",
                   title: "Speed + Accuracy",
                   desc: "Delivering faster insights with exceptional precision.",
                 },
                 {
+                  icon: "🧠",
                   title: "Context-Aware Insights",
                   desc: "Understands patient history and clinical relevance for better decisions.",
                 },
                 {
+                  icon: "📈",
                   title: "Continuous Learning",
                   desc: "Evolves with the latest research and medical advancements.",
                 },
@@ -755,47 +641,69 @@ const Product1 = () => {
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                  }}
                   whileHover={{
                     y: -8,
-                    transition: { duration: 0.3 },
                   }}
-                  className="group relative overflow-hidden bg-white rounded-[35px] p-8 sm:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+                  className="
+          group
+          relative
+          overflow-hidden
+          rounded-[30px]
+          bg-white
+          border border-gray-100
+          p-6 sm:p-8 lg:p-10
+          shadow-[0_10px_40px_rgba(0,0,0,.06)]
+          hover:shadow-[0_25px_70px_rgba(8,27,75,.12)]
+          transition-all duration-500
+          flex flex-col
+          h-full
+        "
                 >
-                  {/* Animated top line */}
-                  <motion.div
-                    initial={{ width: 50 }}
-                    whileHover={{ width: 120 }}
-                    transition={{ duration: 0.4 }}
-                    className="h-[4px] rounded-full bg-[#081b4b] mb-8"
-                  />
+                  {/* Glow */}
+                  <div className="absolute -bottom-16 -right-16 w-44 h-44 bg-blue-100 rounded-full blur-[90px] opacity-0 group-hover:opacity-100 transition duration-700" />
 
-                  {/* Background Number */}
-                  <div className="absolute right-6 top-4 text-[90px] font-bold text-[#081b4b]/5 select-none">
-                    0{index + 1}
+                  {/* Top */}
+                  <div className="relative z-10 flex items-center justify-between">
+                    {/* Icon */}
+                    <div className="w-16 h-16 rounded-[22px] bg-gradient-to-br from-[#081b4b] to-blue-600 shadow-lg flex items-center justify-center text-3xl">
+                      {item.icon}
+                    </div>
+
+                    {/* Arrow */}
+                    <div
+                      className="
+              w-11 h-11
+              rounded-full
+              bg-gray-50
+              flex items-center justify-center
+              text-[#081b4b]
+              text-lg
+              group-hover:bg-[#081b4b]
+              group-hover:text-white
+              group-hover:translate-x-1
+              transition-all duration-300
+            "
+                    >
+                      →
+                    </div>
                   </div>
 
                   {/* Title */}
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-[#081b4b] leading-tight">
-                      {item.title}
-                    </h3>
-
-                    <motion.div
-                      initial={{ x: -10, opacity: 0 }}
-                      whileHover={{ x: 0, opacity: 1 }}
-                      className="w-12 h-12 rounded-full bg-[#081b4b] text-white flex items-center justify-center text-xl shrink-0"
-                    >
-                      →
-                    </motion.div>
-                  </div>
+                  <h3 className="relative z-10 mt-7 text-2xl sm:text-[28px] font-bold text-[#081b4b] leading-tight">
+                    {item.title}
+                  </h3>
 
                   {/* Description */}
-                  <p className="mt-6 text-gray-500 text-base sm:text-lg leading-8">
+                  <p className="relative z-10 mt-5 text-sm sm:text-base text-gray-500 leading-7 flex-grow">
                     {item.desc}
                   </p>
 
-                  {/* Glow */}
-                  <div className="absolute -bottom-24 -right-24 w-44 h-44 bg-blue-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500" />
+                  {/* Bottom Animated Line */}
+                  <div className="relative z-10 mt-8 h-[3px] w-16 rounded-full bg-[#081b4b] group-hover:w-32 transition-all duration-500" />
                 </motion.div>
               ))}
             </div>
@@ -891,7 +799,7 @@ const Product1 = () => {
                     <motion.img
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.8 }}
-                      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=700"
+                      src="/med5.png"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
 

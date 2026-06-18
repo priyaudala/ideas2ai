@@ -10,6 +10,7 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   const container = {
@@ -46,10 +47,10 @@ const Footer = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        whileHover={{ 
+        whileHover={{
           scale: 1.1,
           y: -5,
-          boxShadow: "0 0 20px rgba(139, 92, 246, 0.6)"
+          boxShadow: "0 0 20px rgba(139, 92, 246, 0.6)",
         }}
         whileTap={{ scale: 0.95 }}
         className="
@@ -92,20 +93,24 @@ const Footer = () => {
         "
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-14 lg:gap-16">
+          <motion.div
+            variants={item}
+            className="flex flex-col items-center sm:items-start"
+          >
+            <img
+              src={logo}
+              alt="Ideas2AI Logo"
+              className="w-40 sm:w-44 md:w-48 object-contain mb-3 -translate-y-1.5"
+            />
 
-          {/* Logo */}
-          <motion.div variants={item} className="text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl font-semibold mb-4 sm:mb-6 flex justify-center sm:justify-start items-center gap-2">
-              <span className="text-purple-500">ai</span>
-              Orbia
-            </h1>
-
-            <p className="text-gray-300 text-sm leading-relaxed mb-6 sm:mb-8">
+            {/* Description */}
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 sm:mb-8 max-w-sm text-center sm:text-left">
               Our operations are centered on data protection and security,
               guaranteeing adherence to international regulations such as GDPR
               and HIPAA.
             </p>
 
+            {/* Social Icons */}
             <div className="flex justify-center sm:justify-start gap-3 sm:gap-4">
               {[FaFacebookF, FaTwitter, FaLinkedinIn, FaPinterestP].map(
                 (Icon, i) => (
@@ -116,7 +121,7 @@ const Footer = () => {
                   >
                     <Icon size={14} />
                   </motion.div>
-                )
+                ),
               )}
             </div>
           </motion.div>

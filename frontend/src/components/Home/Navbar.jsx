@@ -8,7 +8,7 @@ import {
   FiPlus,
   FiMinus,
 } from "react-icons/fi";
-import logo from "../../assets/logo-white.png";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -144,12 +144,13 @@ const Navbar = () => {
           <div className="max-w-[1920px] mx-auto">
             <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
               {/* Logo */}
-              <div className="flex-shrink-0">
-                <Link to="/">
+              <div className="flex-shrink-0 flex items-center h-full">
+                <Link to="/" className="flex items-center h-full">
+                  {/* Logo */}
                   <img
                     src={logo}
-                    alt="Logo"
-                    className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto cursor-pointer"
+                    alt="Ideas2AI Logo"
+                    className="w-40 sm:w-44 md:w-48 object-contain mt-3 mb-6"
                   />
                 </Link>
               </div>
@@ -422,14 +423,14 @@ const Navbar = () => {
                         product 1
                       </Link>
                       <Link
-                        to="/products/product-1"
+                        to="/products/product2"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
                         Product 2
                       </Link>
                       <Link
-                        to="/products/product-2"
+                        to="/products/product3"
                         className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
                         onClick={closeMobileMenu}
                       >
