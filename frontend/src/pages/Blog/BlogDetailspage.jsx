@@ -1,7 +1,7 @@
 import React from 'react'
 import BlogDetails from "../../components/Blogs/BlogDetails.jsx";
 
-const BlogDetailspage = () => {
+const BlogDetailsPage = () => {
   return (
     <div>
       <BlogDetails />
@@ -9,4 +9,4 @@ const BlogDetailspage = () => {
   )
 }
 
-export default BlogDetailspage
+export default BlogDetailsPage
