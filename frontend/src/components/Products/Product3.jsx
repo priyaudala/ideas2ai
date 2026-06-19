@@ -1,257 +1,3 @@
-
-// import React from "react";
-// import { motion } from "framer-motion";
-// import {
-//   CheckCircle,
-//   ArrowRight,
-//   Cloud,
-//   Shield,
-//   Smartphone,
-//   BarChart3,
-// } from "lucide-react";
-
-// const Product3 = () => {
-//   return (
-//     <div>
-//       <section className="pt-24 md:pt-28">
-//         {/* ================= HERO ================= */}
-//         <div className="relative w-full h-[300px] md:h-[350px] flex items-center justify-center text-center text-white overflow-hidden">
-//           <div
-//             className="absolute inset-0 bg-cover bg-center"
-//             style={{ backgroundImage: "url('/bgimg.jpeg')" }}
-//           />
-//           <div className="absolute inset-0 bg-black/50" />
-//           <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,#ffffff,transparent_60%)]" />
-
-//           <div className="relative z-10">
-//             <h1 className="text-3xl md:text-5xl font-bold mb-3">
-//               Cloud Nest PMS
-//             </h1>
-//             <p className="text-gray-300 text-sm md:text-base">
-//               Home <span className="mx-2">›</span> Cloud Nest PMS
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* ================= MAIN ================= */}
-//         <section className="bg-white py-16 lg:py-20">
-//           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-//             <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 lg:gap-10">
-
-//               {/* LEFT */}
-//               <div>
-
-//                 {/* HERO IMAGE */}
-//                 <motion.div
-//                   initial={{ opacity: 0, y: 40 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   className="overflow-hidden rounded-[30px] lg:rounded-[40px]"
-//                 >
-//                   <img
-//                     src="/cloudpms.jpg"
-//                     alt="Cloud PMS"
-//                     className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] object-cover"
-//                   />
-//                 </motion.div>
-
-//                 {/* TITLE */}
-//                 <div className="mt-8">
-//                   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#081b4b]">
-//                     Cloud Nest PMS
-//                   </h1>
-
-//                   <h2 className="mt-2 text-xl sm:text-2xl md:text-3xl font-semibold text-blue-600">
-//                     Next-Gen Property Management
-//                   </h2>
-//                 </div>
-
-//                 {/* DESCRIPTION */}
-//                 <p className="mt-8 text-base sm:text-lg text-gray-500 leading-8">
-//                   Transform your hospitality operations with our cloud-based platform.
-//                   Streamline bookings, enhance guest experiences, and maximize revenue—all from one intelligent dashboard.
-//                 </p>
-
-//                 {/* BADGES */}
-//                 <div className="flex flex-wrap gap-3 mt-8">
-//                   {[
-//                     "Cloud Based",
-//                     "Multi-Property",
-//                     "Analytics",
-//                     "Secure",
-//                     "Mobile Ready",
-//                     "Fast Setup",
-//                   ].map((item, i) => (
-//                     <div
-//                       key={i}
-//                       className="px-4 py-3 rounded-full bg-blue-50 text-blue-700 text-sm font-medium"
-//                     >
-//                       {item}
-//                     </div>
-//                   ))}
-//                 </div>
-
-//                 {/* STATS */}
-//                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-14">
-//                   {[
-//                     { num: "99.9%", label: "Uptime" },
-//                     { num: "500+", label: "Properties" },
-//                     { num: "24/7", label: "Support" },
-//                     { num: "50+", label: "Integrations" },
-//                   ].map((s, i) => (
-//                     <div
-//                       key={i}
-//                       className="rounded-3xl bg-gray-50 p-8 text-center shadow-sm"
-//                     >
-//                       <h2 className="text-3xl md:text-5xl font-bold text-blue-600">
-//                         {s.num}
-//                       </h2>
-//                       <p className="mt-2 text-gray-500">{s.label}</p>
-//                     </div>
-//                   ))}
-//                 </div>
-//               </div>
-
-//               {/* RIGHT */}
-//               <div>
-//                 <div className="bg-gray-100 rounded-[30px] lg:rounded-[40px] p-6 sm:p-8 lg:p-10">
-
-//                   <h2 className="text-3xl md:text-4xl font-bold text-[#081b4b] mb-10">
-//                     Product Info
-//                   </h2>
-
-//                   <div className="space-y-8">
-
-//                     <Info icon={<Cloud />} title="Product" value="Cloud Nest PMS" />
-//                     <Info icon={<BarChart3 />} title="Type" value="Property Management" />
-//                     <Info icon={<Shield />} title="Security" value="GDPR Compliant" />
-//                     <Info icon={<Smartphone />} title="Access" value="Mobile & Web" />
-
-//                   </div>
-//                 </div>
-
-//                 {/* CTA */}
-//                 <div className="mt-8 rounded-[30px] overflow-hidden relative">
-//                   <img
-//                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-//                     className="h-[300px] w-full object-cover"
-//                     alt=""
-//                   />
-
-//                   <div className="absolute inset-0 bg-[#081b4b]/80 p-6 sm:p-10 flex flex-col justify-center">
-//                     <h2 className="text-2xl sm:text-3xl font-bold text-white">
-//                       Trusted by 500+ properties worldwide
-//                     </h2>
-
-//                     <p className="text-gray-300 mt-4">
-//                       Cloud-based · AI-powered · 24/7 support
-//                     </p>
-
-//                     <button className="mt-6 bg-gradient-to-r from-blue-600 to-cyan-500 px-7 py-4 rounded-full text-white font-semibold flex items-center gap-3 w-fit">
-//                       Start Free Trial
-//                       <ArrowRight size={20} />
-//                     </button>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* ================= FEATURES ================= */}
-//             <div className="mt-20">
-//               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081b4b]">
-//                 Comprehensive Features
-//               </h2>
-
-//               <div className="grid md:grid-cols-2 gap-6 mt-12">
-
-//                 {features.map((f, i) => (
-//                   <motion.div
-//                     key={i}
-//                     whileHover={{ y: -8 }}
-//                     className="bg-gray-50 rounded-3xl p-7 shadow-sm"
-//                   >
-//                     <CheckCircle className="text-blue-600 mb-4" />
-//                     <h3 className="text-xl font-bold text-[#081b4b]">
-//                       {f.title}
-//                     </h3>
-//                     <p className="text-gray-500 mt-3">{f.desc}</p>
-//                   </motion.div>
-//                 ))}
-
-//               </div>
-//             </div>
-
-//             {/* ================= WHY DIFFERENT ================= */}
-//             <div className="mt-20">
-//               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#081b4b]">
-//                 Why Choose Cloud Nest PMS?
-//               </h2>
-
-//               <div className="grid md:grid-cols-2 gap-6 mt-12">
-//                 {why.map((w, i) => (
-//                   <motion.div
-//                     key={i}
-//                     whileHover={{ scale: 1.03 }}
-//                     className="bg-gray-50 p-8 rounded-3xl"
-//                   >
-//                     <h3 className="text-xl font-bold text-[#081b4b]">
-//                       {w}
-//                     </h3>
-//                   </motion.div>
-//                 ))}
-//               </div>
-//             </div>
-
-//           </div>
-//         </section>
-//       </section>
-//     </div>
-//   );
-// };
-
-// /* ===== SMALL COMPONENT ===== */
-// const Info = ({ icon, title, value }) => (
-//   <div className="flex gap-4 items-center">
-//     <div className="w-14 h-14 rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center text-white">
-//       {icon}
-//     </div>
-//     <div>
-//       <p className="text-gray-400">{title}</p>
-//       <h3 className="font-bold text-xl text-[#081b4b]">{value}</h3>
-//     </div>
-//   </div>
-// );
-
-// /* DATA */
-// const features = [
-//   {
-//     title: "Front Desk Management",
-//     desc: "Smooth check-in/check-out with intelligent room allocation",
-//   },
-//   {
-//     title: "Booking Engine",
-//     desc: "Seamless OTA integration and direct bookings",
-//   },
-//   {
-//     title: "Revenue Management",
-//     desc: "AI-powered dynamic pricing and forecasting",
-//   },
-//   {
-//     title: "Guest Profiles",
-//     desc: "Personalized guest experience tracking",
-//   },
-// ];
-
-// const why = [
-//   "Cloud-based access anywhere",
-//   "Multi-property management",
-//   "Real-time OTA integration",
-//   "Automated billing system",
-//   "AI analytics & forecasting",
-//   "Mobile optimized dashboard",
-// ];
-
-// export default Product3;
 import React from "react";
 import { motion } from "framer-motion";
 import cloudNestImg from "../../assets/cloudnest.jpg";
@@ -509,25 +255,51 @@ const Product3 = () => {
                               </div>
             </div>
           </div>
-
-         {/* ================= FEATURES ================= */}
+{/* ================= FEATURES ================= */}
 <SectionTitle title="Comprehensive Features" />
 
-<div className="relative mt-16">
+<div className="relative mt-10">
 
-  {/* Center Line */}
-  <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 via-pink-500 to-purple-600 rounded-full"></div>
+  {/* Center Timeline Line */}
+  <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-purple-600 via-pink-500 to-purple-600 rounded-full"></div>
 
-  <div className="space-y-10">
+  <div className="space-y-6">
 
     {features.map((f, i) => {
       const featureIcons = [
-        <FaHotel/>,
-      < FaCalendarCheck/>,
-      <FaChartLine />,
+        <FaHotel />,
+        <FaCalendarCheck />,
+        <FaChartLine />,
         <FaUserCog />,
         <FaWallet />,
         <FaShieldAlt />,
+      ];
+
+      const cardStyles = [
+        {
+          bg: "from-purple-50 to-pink-50",
+          icon: "from-purple-600 to-pink-500",
+        },
+        {
+          bg: "from-blue-50 to-cyan-50",
+          icon: "from-blue-600 to-cyan-500",
+        },
+        {
+          bg: "from-green-50 to-emerald-50",
+          icon: "from-green-600 to-emerald-500",
+        },
+        {
+          bg: "from-orange-50 to-amber-50",
+          icon: "from-orange-500 to-amber-500",
+        },
+        {
+          bg: "from-rose-50 to-red-50",
+          icon: "from-rose-500 to-red-500",
+        },
+        {
+          bg: "from-indigo-50 to-violet-50",
+          icon: "from-indigo-600 to-violet-500",
+        },
       ];
 
       const isLeft = i % 2 === 0;
@@ -542,7 +314,7 @@ const Product3 = () => {
           <motion.div
             initial={{
               opacity: 0,
-              x: isLeft ? -120 : 120,
+              x: isLeft ? -80 : 80,
             }}
             whileInView={{
               opacity: 1,
@@ -550,54 +322,81 @@ const Product3 = () => {
             }}
             viewport={{ once: true }}
             transition={{
-              duration: 0.8,
+              duration: 0.7,
             }}
-            className="relative w-full lg:w-[45%]"
+            className="relative w-full lg:w-[40%]"
           >
-            {/* Dot */}
-            <div className="hidden lg:block absolute top-10 w-6 h-6 rounded-full bg-purple-600 shadow-[0_0_30px_rgba(147,51,234,0.8)] z-20
-            left-auto right-[-54px]"
-            />
 
-            {!isLeft && (
-              <div className="hidden lg:block absolute top-10 w-6 h-6 rounded-full bg-purple-600 shadow-[0_0_30px_rgba(147,51,234,0.8)] z-20 left-[-54px]" />
+            {/* Timeline Dot */}
+            {isLeft ? (
+              <div className="hidden lg:block absolute top-8 right-[-44px] w-4 h-4 rounded-full bg-purple-600 shadow-[0_0_20px_rgba(147,51,234,0.8)] z-20" />
+            ) : (
+              <div className="hidden lg:block absolute top-8 left-[-44px] w-4 h-4 rounded-full bg-purple-600 shadow-[0_0_20px_rgba(147,51,234,0.8)] z-20" />
             )}
 
             {/* Card */}
-            <div className="group bg-white border border-purple-100 rounded-[35px] p-8 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+            <div
+              className="group relative overflow-hidden bg-white border border-purple-100 rounded-[28px] p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
+            >
+              {/* Hover Background */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${cardStyles[i].bg}
+                opacity-0 group-hover:opacity-100 transition-all duration-500`}
+              ></div>
 
+              {/* Glow */}
+              <div
+                className={`absolute -top-8 -right-8 w-28 h-28 rounded-full blur-3xl opacity-10
+                bg-gradient-to-r ${cardStyles[i].icon}
+                group-hover:scale-150 transition-all duration-700`}
+              ></div>
+
+              {/* Icon */}
               <motion.div
                 whileHover={{
                   rotate: 360,
-                  scale: 1.1,
+                  scale: 1.15,
                 }}
                 transition={{
                   duration: 0.8,
                 }}
-                className="w-16 h-16 rounded-3xl bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center text-white text-2xl mb-6"
+                className={`relative z-10 w-14 h-14 rounded-2xl
+                bg-gradient-to-r ${cardStyles[i].icon}
+                flex items-center justify-center text-white text-xl shadow-lg mb-4`}
               >
                 {featureIcons[i]}
               </motion.div>
 
+              {/* Title */}
               <motion.h3
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-2xl font-bold text-[#04154a]"
+                className="relative z-10 text-xl font-bold text-[#04154a]"
               >
                 {f.title}
               </motion.h3>
 
+              {/* Description */}
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-gray-500 mt-4 leading-7"
+                className="relative z-10 text-gray-500 mt-3 leading-6 text-sm"
               >
                 {f.desc}
               </motion.p>
 
+              {/* Bottom Line */}
+              <div
+                className={`relative z-10 mt-5 h-1 w-12 rounded-full
+                bg-gradient-to-r ${cardStyles[i].icon}
+                group-hover:w-20 transition-all duration-500`}
+              ></div>
             </div>
+
           </motion.div>
         </div>
       );

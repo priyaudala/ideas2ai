@@ -14,6 +14,9 @@ import Product1Page from "./pages/Product/Product1Page.jsx";
 import Product2Page from "./pages/Product/Product2Page.jsx";
 import Product3Page from "./pages/Product/Product3Page.jsx";
 import Careers from "./pages/Careers.jsx";
+import FullStackDetails from "./components/careers/FullStackDetails.jsx";
+import DataEngineerDetails from "./components/careers/DataEngineerDetails.jsx";
+import AzureCloudDetails from "./components/careers/AzureCloudDetails.jsx";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs.jsx";
 import BlogGridPage from "./pages/Blog/BlogGridPage";
@@ -47,6 +50,20 @@ function App() {
           <Route path="/blog/details/:id" element={<BlogDetailsPage />} />
           <Route path="/blog/sidebar" element={<BlogSidebarPage />} />
           <Route path="/careers" element={<Careers />} />
+          <Route
+        path="/careers/full-stack-developer"
+        element={<FullStackDetails />}
+      />
+
+      <Route
+        path="/careers/azure-cloud-engineer"
+        element={<AzureCloudDetails />}
+      />
+
+      <Route
+        path="/careers/data-engineer"
+        element={<DataEngineerDetails />}
+      />
         </Routes>
         <SubscribeSection />
         <Footer />
