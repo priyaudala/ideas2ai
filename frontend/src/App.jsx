@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import OurservicesPage from "./pages/Service/OurServicesPage.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import ServiceDetailsPage from "./pages/Service/ServiceDetailsPage.jsx";
-import DevelopmentServicesPage from "./pages/Service/DevelopmentServicespage.jsx";
+import DevelopmentServicesPage from "./pages/Service/DevelopmentServicesPage.jsx";
 import ApplicationSupportPage from "./pages/Service/ApplicationSupportPage.jsx";
 import UiUxPage from "./pages/Service/UiUxPage.jsx";
 import DigitalMarketingPage from "./pages/Service/DigitalMarketingPage.jsx";
