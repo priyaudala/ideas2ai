@@ -3,7 +3,7 @@ import DevopsCloud from "../../components/Services/DevelopmentServices/DevopsClo
 import ApplicationDevelopment from "../../components/Services/DevelopmentServices/ApplicationDevelopment";
 import ApplicationIntegration from "../../components/Services/DevelopmentServices/ApplicationIntegration";
 import DataMigration from "../../components/Services/DevelopmentServices/DataMigration";
-import Snowflake from "../../components/Services/DevelopmentServices/Snowflake";
+import SnowFlake from "../../components/Services/DevelopmentServices/SnowFlake";
 
 const DevelopmentServicesPage = () => {
   return (
@@ -12,7 +12,7 @@ const DevelopmentServicesPage = () => {
       <ApplicationDevelopment />
       <DataMigration />
       <DevopsCloud />
-      <Snowflake />
+      <SnowFlake />
     </div>
   );
 };
