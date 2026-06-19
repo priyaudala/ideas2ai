@@ -10,6 +10,12 @@ import OurservicesPage from "./pages/Service/OurServicesPage.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import ServiceDetailsPage from "./pages/Service/ServiceDetailsPage.jsx";
 import DevelopmentServicesPage from "./pages/Service/DevelopmentServicespage.jsx";
+import ApplicationSupportPage from "./pages/Service/ApplicationSupportPage.jsx";
+import UiUxPage from "./pages/Service/UiUxPage.jsx";
+import DigitalMarketingPage from "./pages/Service/DigitalMarketingPage.jsx";
+import SoftwareTestingPage from "./pages/Service/SoftwareTestingPage.jsx";
+import DataSciencePage from "./pages/Service/DataSciencePage.jsx";
+import StaffingPage from "./pages/Service/StaffingPage.jsx";
 import Product1Page from "./pages/Product/Product1Page.jsx";
 import Product2Page from "./pages/Product/Product2Page.jsx";
 import Product3Page from "./pages/Product/Product3Page.jsx";
@@ -39,14 +45,29 @@ function App() {
             path="/services/development-services"
             element={<DevelopmentServicesPage />}
           />
+          <Route
+            path="/services/application-support"
+            element={<ApplicationSupportPage />}
+          />
+          <Route path="/services/ui-ux" element={<UiUxPage />} />
+          <Route
+            path="/services/digital-marketing"
+            element={<DigitalMarketingPage />}
+          />
+          <Route
+            path="/services/software-testing"
+            element={<SoftwareTestingPage />}
+          />
+          <Route path="/services/data-science" element={<DataSciencePage />} />
+          <Route path="/services/staffing" element={<StaffingPage />} />
           <Route path="/products/product1" element={<Product1Page />} />
           <Route path="/products/product2" element={<Product2Page />} />
           <Route path="/products/product3" element={<Product3Page />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog/grid" element={<BlogGridPage />} />
           <Route path="/blog/details/:id" element={<BlogDetailsPage />} />
           <Route path="/blog/sidebar" element={<BlogSidebarPage />} />
-          <Route path="/careers" element={<Careers />} />
         </Routes>
         <SubscribeSection />
         <Footer />

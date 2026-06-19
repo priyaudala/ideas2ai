@@ -256,10 +256,279 @@ const Navbar = () => {
                           </Link>
                         </div>
                       </div>
+                      {/* Application Support */}
+                      <div className="relative group">
+                        <Link
+                          to="/services/application-support"
+                          className="w-full flex justify-between items-center px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                        >
+                          Application Support
+                          <span>›</span>
+                        </Link>
+
+                        {/* Submenu */}
+                        <div className="absolute top-0 left-full ml-2 hidden group-hover:block bg-white shadow-2xl rounded-xl w-64 p-3">
+                          <Link
+                            to="/services/implementation-services"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Implementation Services
+                          </Link>
+
+                          <Link
+                            to="/services/post-implementation-support"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Post Implementation Support
+                          </Link>
+
+                          <Link
+                            to="/services/troubleshooting-support"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Troubleshooting Support
+                          </Link>
+
+                          <Link
+                            to="/services/tech-support"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Tech Support
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="relative group">
+                        <Link
+                          to="/services/ui-ux"
+                          className="w-full flex justify-between items-center px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                        >
+                          UI / UX
+                          <span>›</span>
+                        </Link>
+
+                        <div className="absolute top-0 left-full ml-2 hidden group-hover:block bg-white shadow-2xl rounded-xl w-72 p-3">
+                          <Link
+                            to="/services/dynamic-website"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50"
+                          >
+                            Dynamic Website
+                          </Link>
+
+                          <Link
+                            to="/services/mobile-optimized-website"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50"
+                          >
+                            Mobile Optimized Website
+                          </Link>
+                          <Link
+                            to="/services/responsive-web-design"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50"
+                          >
+                            Responsive Web Design
+                          </Link>
+                          <Link
+                            to="/services/mobile-web-applications"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50"
+                          >
+                            Mobile Web Applications
+                          </Link>
+                          <Link
+                            to="/services/web-design"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50"
+                          >
+                            Web Design
+                          </Link>
+                          <Link
+                            to="/services/website-development-and-hosting"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50"
+                          >
+                            Website Development and Hosting
+                          </Link>
+                          <Link
+                            to="/services/ecommerce-websites"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50"
+                          >
+                            E-commerce Website Design and Development
+                          </Link>
+                        </div>
+                      </div>
+                      {/* Digital Marketing */}
+                      <div className="relative group">
+                        <Link
+                          to="/services/digital-marketing"
+                          className="w-full flex justify-between items-center px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                        >
+                          Digital Marketing
+                          <span>›</span>
+                        </Link>
+
+                        {/* Submenu */}
+                        <div className="absolute top-0 left-full ml-2 hidden group-hover:block bg-white shadow-2xl rounded-xl w-64 p-3">
+                          <Link
+                            to="/services/search-engine-optimization"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Search Optimization
+                          </Link>
+
+                          <Link
+                            to="/services/social-media-marketing"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Social Media Marketing
+                          </Link>
+
+                          <Link
+                            to="/services/search-engine-marketing"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Search Engine Marketing
+                          </Link>
+                          <Link
+                            to="/services/online-reputation-management"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Online Reputation Management
+                          </Link>
+                          <Link
+                            to="/services/strategy"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Strategy
+                          </Link>
+                          <Link
+                            to="/services/analytics"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Analytics
+                          </Link>
+                        </div>
+                      </div>
+                      {/* Software Testing */}
+                      <div className="relative group">
+                        <Link
+                          to="/services/software-testing"
+                          className="w-full flex justify-between items-center px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                        >
+                          Software Testing
+                          <span>›</span>
+                        </Link>
+
+                        {/* Submenu */}
+                        <div className="absolute top-0 left-full ml-2 hidden group-hover:block bg-white shadow-2xl rounded-xl w-64 p-3">
+                          <Link
+                            to="/services/mobile-application-testing"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Mobile Application Testing
+                          </Link>
+
+                          <Link
+                            to="/services/manual"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Manual
+                          </Link>
+
+                          <Link
+                            to="/services/automation"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Automation
+                          </Link>
+                        </div>
+                      </div>
+                      {/* Data Science */}
+                      <div className="relative group">
+                        <Link
+                          to="/services/deep-learing"
+                          className="w-full flex justify-between items-center px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                        >
+                          Deep Learning
+                          <span>›</span>
+                        </Link>
+
+                        {/* Submenu */}
+                        <div className="absolute top-0 left-full ml-2 hidden group-hover:block bg-white shadow-2xl rounded-xl w-64 p-3">
+                          <Link
+                            to="/services/artificial-intelligence"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Artificial Intelligence
+                          </Link>
+
+                          <Link
+                            to="/services/machine-learning"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Machine Learning
+                          </Link>
+
+                          <Link
+                            to="/services/ai-chatbots"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            AI Chatbots
+                          </Link>
+
+                          <Link
+                            to="/services/technologies"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Technologies
+                          </Link>
+                          <Link
+                            to="/services/competencies"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Competencies
+                          </Link>
+                        </div>
+                      </div>
+                      {/* Staffing */}
+                      <div className="relative group">
+                        <Link
+                          to="/services/staffing"
+                          className="w-full flex justify-between items-center px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                        >
+                          Staffing
+                          <span>›</span>
+                        </Link>
+
+                        {/* Submenu */}
+                        <div className="absolute top-0 left-full ml-2 hidden group-hover:block bg-white shadow-2xl rounded-xl w-64 p-3">
+                          <Link
+                            to="/services/staff-augmentation"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Staff Augmentation
+                          </Link>
+
+                          <Link
+                            to="/services/permanent-staffing-services"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Permanent Staffing Services
+                          </Link>
+
+                          <Link
+                            to="/services/contract-staffing-services"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Contract Staffing Services
+                          </Link>
+
+                          <Link
+                            to="/services/contract-to-hire"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Contract to Hire
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
-
                 {/* Products Dropdown */}
                 <div className="relative dropdown-container">
                   <button
@@ -494,6 +763,395 @@ const Navbar = () => {
                         >
                           Snowflake
                         </Link>
+                      </div>
+                    )}
+                    {/* Application Support */}
+                    <button
+                      onClick={() => toggleSubDropdown("applicationSupport")}
+                      className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                    >
+                      Application Support
+                      <span>
+                        {openSubDropdown === "applicationSupport" ? (
+                          <FiMinus size={18} />
+                        ) : (
+                          <FiPlus size={18} />
+                        )}
+                      </span>
+                    </button>
+
+                    {openSubDropdown === "applicationSupport" && (
+                      <div className="pl-5 space-y-2">
+                        <Link
+                          to="/services/implementation-services"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Implementation Services
+                        </Link>
+
+                        <Link
+                          to="/services/post-implementation-support"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Post Implementation Support
+                        </Link>
+
+                        <Link
+                          to="/services/troubleshooting-support"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Troubleshooting Support
+                        </Link>
+
+                        <Link
+                          to="/services/tech-support"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Tech Support
+                        </Link>
+                        <button
+                          onClick={() => toggleSubDropdown("uiux")}
+                          className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                        >
+                          UI / UX
+                          {openSubDropdown === "uiux" ? (
+                            <FiMinus size={18} />
+                          ) : (
+                            <FiPlus size={18} />
+                          )}
+                        </button>
+
+                        {openSubDropdown === "uiux" && (
+                          <div className="pl-5 space-y-2">
+                            <Link
+                              to="/services/dynamic-website"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Dynamic Website
+                            </Link>
+                            <Link
+                              to="/services/mobile-optimized-website"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Mobile Optimized Website
+                            </Link>
+                            <Link
+                              to="/services/responsive-web-design"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Responsive Web Design
+                            </Link>
+                            <Link
+                              to="/services/mobile-web-applications"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Mobile Web Applications
+                            </Link>
+                            <Link
+                              to="/services/web-design"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Web Design
+                            </Link>
+                            <Link
+                              to="/services/website-development-and-hosting"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Website Development and Hosting
+                            </Link>
+                            <Link
+                              to="/services/ecommerce-website-design-and-development"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              E-commerce Website Design and Development
+                            </Link>
+                          </div>
+                        )}
+                        {/* Digital Marketing */}
+                        <button
+                          onClick={() => toggleSubDropdown("digitalMarketing")}
+                          className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                        >
+                          Digital Marketing
+                          <span>
+                            {openSubDropdown === "digitalMarketing" ? (
+                              <FiMinus size={18} />
+                            ) : (
+                              <FiPlus size={18} />
+                            )}
+                          </span>
+                        </button>
+
+                        {openSubDropdown === "digitalMarketing" && (
+                          <div className="pl-5 space-y-2">
+                            <Link
+                              to="/services/search-engine-optimization"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Search Engine Optimization
+                            </Link>
+
+                            <Link
+                              to="/services/social-media-marketing"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Social Media Marketing
+                            </Link>
+
+                            <Link
+                              to="/services/search-engine-marketing"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Search Engine Marketing
+                            </Link>
+
+                            <Link
+                              to="/services/online-reputation-management"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Online Reputation Management
+                            </Link>
+
+                            <Link
+                              to="/services/strategy"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Strategy
+                            </Link>
+
+                            <Link
+                              to="/services/analytics"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Analytics
+                            </Link>
+                          </div>
+                        )}
+                        {/* Software Testing */}
+                        <button
+                          onClick={() => toggleSubDropdown("softwareTesting")}
+                          className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                        >
+                          Software Testing
+                          <span>
+                            {openSubDropdown === "softwareTesting" ? (
+                              <FiMinus size={18} />
+                            ) : (
+                              <FiPlus size={18} />
+                            )}
+                          </span>
+                        </button>
+
+                        {openSubDropdown === "softwareTesting" && (
+                          <div className="pl-5 space-y-2">
+                            <Link
+                              to="/services/mobile-application-testing"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Mobile Application Testing
+                            </Link>
+
+                            <Link
+                              to="/services/manual-testing"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Manual
+                            </Link>
+
+                            <Link
+                              to="/services/automation-testing"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Automation
+                            </Link>
+                          </div>
+                        )}
+                        {/* Data Science */}
+                        <button
+                          onClick={() => toggleSubDropdown("dataScience")}
+                          className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                        >
+                          Data Science
+                          <span>
+                            {openSubDropdown === "dataScience" ? (
+                              <FiMinus size={18} />
+                            ) : (
+                              <FiPlus size={18} />
+                            )}
+                          </span>
+                        </button>
+
+                        {openSubDropdown === "dataScience" && (
+                          <div className="pl-5 space-y-2">
+                            <Link
+                              to="/services/deep-learning"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Deep Learning
+                            </Link>
+
+                            <Link
+                              to="/services/artificial-intelligence"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Artificial Intelligence
+                            </Link>
+
+                            <Link
+                              to="/services/machine-learning"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Machine Learning
+                            </Link>
+
+                            <Link
+                              to="/services/ai-chatbots"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              AI Chatbots
+                            </Link>
+
+                            <Link
+                              to="/services/technologies"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Technologies
+                            </Link>
+
+                            <Link
+                              to="/services/competencies"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Competencies
+                            </Link>
+                          </div>
+                        )}
+                        {/* Staffing */}
+                        <button
+                          onClick={() => toggleSubDropdown("staffing")}
+                          className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                        >
+                          Staffing
+                          <span>
+                            {openSubDropdown === "staffing" ? (
+                              <FiMinus size={18} />
+                            ) : (
+                              <FiPlus size={18} />
+                            )}
+                          </span>
+                        </button>
+
+                        {openSubDropdown === "staffing" && (
+                          <div className="pl-5 space-y-2">
+                            <Link
+                              to="/services/staff-augmentation"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Staff Augmentation
+                            </Link>
+
+                            <Link
+                              to="/services/permanent-staffing-services"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Permanent Staffing Services
+                            </Link>
+
+                            <Link
+                              to="/services/contract-staffing-services"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Contract Staffing Services
+                            </Link>
+
+                            <Link
+                              to="/services/contract-to-hire"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Contract to Hire
+                            </Link>
+                          </div>
+                        )}
+                        {/* Staffing */}
+                        <button
+                          onClick={() => toggleSubDropdown("staffing")}
+                          className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                        >
+                          Staffing
+                          <span>
+                            {openSubDropdown === "staffing" ? (
+                              <FiMinus size={18} />
+                            ) : (
+                              <FiPlus size={18} />
+                            )}
+                          </span>
+                        </button>
+
+                        {openSubDropdown === "staffing" && (
+                          <div className="pl-5 space-y-2">
+                            <Link
+                              to="/services/staff-augmentation"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Staff Augmentation
+                            </Link>
+
+                            <Link
+                              to="/services/permanent-staffing-services"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Permanent Staffing Services
+                            </Link>
+
+                            <Link
+                              to="/services/contract-staffing-services"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Contract Staffing Services
+                            </Link>
+
+                            <Link
+                              to="/services/contract-to-hire"
+                              className="block py-2 text-gray-300"
+                              onClick={closeMobileMenu}
+                            >
+                              Contract to Hire
+                            </Link>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
