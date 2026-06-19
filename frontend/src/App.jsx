@@ -9,10 +9,11 @@ import Home from "./pages/Home";
 import OurservicesPage from "./pages/Service/OurServicesPage.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import ServiceDetailsPage from "./pages/Service/ServiceDetailsPage.jsx";
+import DevelopmentServicesPage from "./pages/Service/DevelopmentServicespage.jsx";
 import Product1Page from "./pages/Product/Product1Page.jsx";
 import Product2Page from "./pages/Product/Product2Page.jsx";
 import Product3Page from "./pages/Product/Product3Page.jsx";
-import Products from "./pages/Products.jsx";
+import Careers from "./pages/Careers.jsx";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs.jsx";
 import BlogGridPage from "./pages/Blog/BlogGridPage";
@@ -34,6 +35,10 @@ function App() {
             path="/services/servicedetails"
             element={<ServiceDetailsPage />}
           />
+          <Route
+            path="/services/development-services"
+            element={<DevelopmentServicesPage />}
+          />
           <Route path="/products/product1" element={<Product1Page />} />
           <Route path="/products/product2" element={<Product2Page />} />
           <Route path="/products/product3" element={<Product3Page />} />
@@ -41,6 +46,7 @@ function App() {
           <Route path="/blog/grid" element={<BlogGridPage />} />
           <Route path="/blog/details/:id" element={<BlogDetailsPage />} />
           <Route path="/blog/sidebar" element={<BlogSidebarPage />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
         <SubscribeSection />
         <Footer />

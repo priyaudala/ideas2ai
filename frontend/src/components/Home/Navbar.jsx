@@ -13,6 +13,11 @@ import logo from "../../assets/logo.png";
 const Navbar = () => {
   const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState(null);
+
+  const toggleSubDropdown = (menu) => {
+    setOpenSubDropdown(openSubDropdown === menu ? null : menu);
+  };
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState({
@@ -172,26 +177,28 @@ const Navbar = () => {
                 >
                   About Us
                 </Link>
-
                 {/* Services Dropdown */}
                 <div className="relative dropdown-container">
                   <button
                     onClick={() => toggleDropdown("services")}
-                    className="hover:text-purple-300 transition duration-300 text-sm xl:text-base 2xl:text-lg flex items-center gap-1 whitespace-nowrap px-1 py-2"
-                    aria-expanded={openDropdown === "services"}
+                    className="hover:text-purple-300 transition duration-300 text-sm xl:text-base 2xl:text-lg flex items-center gap-1"
                   >
-                    Services <span className="ml-1">▾</span>
+                    Services <span>▾</span>
                   </button>
 
                   {openDropdown === "services" && (
-                    <div className="absolute top-full left-0 mt-2 bg-white text-black rounded-lg shadow-2xl w-48 xl:w-56 2xl:w-64 p-4 space-y-2 z-50 animate-fadeIn border border-purple-100">
+                    <div className="absolute top-full left-0 mt-2 bg-white text-black rounded-xl shadow-2xl w-64 p-3 z-50">
+                      {/* Our Services */}
                       <Link
                         to="/services/ourservices"
-                        className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
-                        onClick={() => handleNavigation("/services")}
+                        className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition"
+                        onClick={() =>
+                          handleNavigation("/services/ourservices")
+                        }
                       >
                         Our Services
                       </Link>
+
                       <Link
                         to="/services/servicedetails"
                         className="block hover:text-purple-600 hover:bg-purple-50 transition py-2 px-3 text-sm xl:text-base 2xl:text-lg rounded-md"
@@ -201,6 +208,54 @@ const Navbar = () => {
                       >
                         Service Details
                       </Link>
+                      {/* Development Services */}
+                      <div className="relative group">
+                        <Link
+                          to="/services/development-services"
+                          className="w-full flex justify-between items-center px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                        >
+                          Development Services
+                          <span>›</span>
+                        </Link>
+
+                        {/* Submenu */}
+                        <div className="absolute top-0 left-full ml-2 hidden group-hover:block bg-white shadow-2xl rounded-xl w-64 p-3">
+                          <Link
+                            to="/services/application-integration"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Application Integration
+                          </Link>
+
+                          <Link
+                            to="/services/application-development"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Application Development
+                          </Link>
+
+                          <Link
+                            to="/services/data-migration"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Data Migration
+                          </Link>
+
+                          <Link
+                            to="/services/devops&cloud"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            DevOps & Cloud
+                          </Link>
+
+                          <Link
+                            to="/services/snowflake"
+                            className="block px-4 py-3 rounded-lg hover:bg-purple-50 hover:text-purple-600"
+                          >
+                            Snowflake
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -278,6 +333,12 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
+                <Link
+                  to="/careers"
+                  className="hover:text-purple-300 transition duration-300 text-sm xl:text-base 2xl:text-lg whitespace-nowrap px-1 py-2"
+                >
+                  Careers
+                </Link>
                 <Link
                   to="/contact"
                   className="hover:text-purple-300 transition duration-300 text-sm xl:text-base 2xl:text-lg whitespace-nowrap px-1 py-2"
@@ -358,43 +419,85 @@ const Navbar = () => {
                 >
                   About Us
                 </Link>
-
                 {/* Mobile Services */}
-                <div className="border-b border-white/20">
-                  <button
-                    className="flex justify-between items-center w-full py-3 sm:py-4 text-white text-lg sm:text-xl font-medium hover:text-purple-300 transition px-4"
-                    onClick={() => toggleMobileDropdown("services")}
-                    aria-expanded={mobileDropdowns.services}
-                  >
-                    <span>Services</span>
-                    <span className="text-2xl">
-                      {mobileDropdowns.services ? (
-                        <FiMinus size={20} />
-                      ) : (
-                        <FiPlus size={20} />
-                      )}
-                    </span>
-                  </button>
+                {mobileDropdowns.services && (
+                  <div className="pl-8 pb-3 animate-fadeIn">
+                    {/* Our Services */}
+                    <Link
+                      to="/services/ourservices"
+                      className="block py-3 text-gray-200 hover:text-purple-300"
+                      onClick={closeMobileMenu}
+                    >
+                      Our Services
+                    </Link>
+                    <Link
+                      to="/services/servicedetails"
+                      className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
+                      onClick={closeMobileMenu}
+                    >
+                      Service Details
+                    </Link>
 
-                  {mobileDropdowns.services && (
-                    <div className="pl-8 pb-3 space-y-2 animate-fadeIn">
-                      <Link
-                        to="/services/ourservices"
-                        className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
-                        onClick={closeMobileMenu}
-                      >
-                        Our Services
-                      </Link>
-                      <Link
-                        to="/services/servicedetails"
-                        className="block py-2.5 text-gray-200 hover:text-purple-300 hover:bg-white/5 transition pl-4 text-base sm:text-lg rounded-r-lg border-l-2 border-purple-400"
-                        onClick={closeMobileMenu}
-                      >
-                        Service Details
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                    {/* Development Services */}
+                    <button
+                      onClick={() => toggleSubDropdown("development")}
+                      className="flex justify-between items-center w-full py-3 text-gray-200 hover:text-purple-300"
+                    >
+                      Development Services
+                      <span>
+                        {openSubDropdown === "development" ? (
+                          <FiMinus size={18} />
+                        ) : (
+                          <FiPlus size={18} />
+                        )}
+                      </span>
+                    </button>
+
+                    {openSubDropdown === "development" && (
+                      <div className="pl-5 space-y-2">
+                        <Link
+                          to="/services/application-integration"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Application Integration
+                        </Link>
+
+                        <Link
+                          to="/services/application-development"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Application Development
+                        </Link>
+
+                        <Link
+                          to="/services/data-migration"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Data Migration
+                        </Link>
+
+                        <Link
+                          to="/services/devops-cloud"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          DevOps & Cloud
+                        </Link>
+
+                        <Link
+                          to="/services/snowflake"
+                          className="block py-2 text-gray-300"
+                          onClick={closeMobileMenu}
+                        >
+                          Snowflake
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 {/* Mobile Products */}
                 <div className="border-b border-white/20">
@@ -484,7 +587,13 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-
+                <Link
+                  to="/careers"
+                  className="block py-3 sm:py-4 text-white text-lg sm:text-xl font-medium hover:text-purple-300 transition border-b border-white/20 px-4"
+                  onClick={closeMobileMenu}
+                >
+                  Careers
+                </Link>
                 <Link
                   to="/contact"
                   className="block py-3 sm:py-4 text-white text-lg sm:text-xl font-medium hover:text-purple-300 transition border-b border-white/20 px-4"
