@@ -682,9 +682,9 @@ const Product3 = () => {
 
 </div>
           {/* ================= FUTURE ================= */}
-          <SectionTitle title="Future of Hospitality" />
+<SectionTitle title="Future of Hospitality" />
 
-          <div className="grid md:grid-cols-3 gap-8 mt-10">
+<div className="grid md:grid-cols-3 gap-8 mt-10">
   {future.map((f, i) => {
     const futureIcons = [
       <FaRobot />,
@@ -695,29 +695,76 @@ const Product3 = () => {
       <FaUserCog />,
     ];
 
+    const cardStyles = [
+      {
+        bg: "from-purple-50 to-pink-50",
+        icon: "from-purple-600 to-pink-500",
+      },
+      {
+        bg: "from-blue-50 to-cyan-50",
+        icon: "from-blue-600 to-cyan-500",
+      },
+      {
+        bg: "from-green-50 to-emerald-50",
+        icon: "from-green-600 to-emerald-500",
+      },
+      {
+        bg: "from-orange-50 to-amber-50",
+        icon: "from-orange-500 to-amber-500",
+      },
+      {
+        bg: "from-rose-50 to-red-50",
+        icon: "from-rose-500 to-red-500",
+      },
+      {
+        bg: "from-indigo-50 to-violet-50",
+        icon: "from-indigo-600 to-violet-500",
+      },
+    ];
+
     return (
       <div
         key={i}
-        className="group relative overflow-hidden rounded-[30px] bg-white border border-purple-100 p-8 hover:shadow-2xl transition-all duration-500"
+        className="group relative overflow-hidden rounded-[30px] bg-white border border-gray-100 p-8 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        {/* Hover Background */}
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${cardStyles[i].bg} opacity-0 group-hover:opacity-100 transition-all duration-500`}
+        ></div>
 
-        <div className="relative z-10 w-16 h-16 rounded-3xl bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+        {/* Floating Glow */}
+        <div
+          className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r ${cardStyles[i].icon} opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-all duration-700`}
+        ></div>
+
+        {/* Icon */}
+        <div
+          className={`relative z-10 w-16 h-16 rounded-3xl bg-gradient-to-r ${cardStyles[i].icon}
+          flex items-center justify-center text-white text-2xl shadow-lg mb-6
+          group-hover:rotate-[360deg] group-hover:scale-110 transition-all duration-700`}
+        >
           {futureIcons[i]}
         </div>
 
-        <h3 className="relative z-10 text-xl font-bold text-[#04154a]">
+        {/* Title */}
+        <h3 className="relative z-10 text-xl font-bold text-[#04154a] mb-3">
           {f.title}
         </h3>
 
-        <p className="relative z-10 text-gray-500 mt-3 leading-7">
+        {/* Description */}
+        <p className="relative z-10 text-gray-500 leading-7">
           {f.desc}
         </p>
+
+        {/* Bottom Accent Line */}
+        <div
+          className={`relative z-10 mt-6 h-1 w-16 rounded-full bg-gradient-to-r ${cardStyles[i].icon}
+          group-hover:w-24 transition-all duration-500`}
+        ></div>
       </div>
     );
   })}
 </div>
-
           {/* ================= GALLERY (FIXED MISSING PART) ================= */}
           <SectionTitle title="Product Gallery" />
 
